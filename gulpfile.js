@@ -39,6 +39,12 @@ gulp.task('clean-indices', ()=>{
     .pipe(clean());
 });
 
+// copy cp directory over
+gulp.task('copy-cp',()=>{
+  return gulp.src('./src/cp/*')
+    .pipe(gulp.dest('./dist/'));
+});
+
 //reverse index for site.tags and site.categories
 gulp.task('catalog', ()=>{
   return gulp.src('./src/content/*.md')
