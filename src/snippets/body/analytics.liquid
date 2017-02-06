@@ -5,6 +5,10 @@
     "account": "{{file.site.analyticsID}}"
   },
   "triggers": {
+    "trackPageview": {
+      "on": "visible",
+      "request": "pageview"
+    },
     "outboundLinks": {
         "on": "click",
         "selector": "a",
