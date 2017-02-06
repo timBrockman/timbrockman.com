@@ -25,7 +25,7 @@ var site = require('./src/content/site.json');
 //
 // default
 gulp.task('default', (cb)=>{
-  runSequence('clean-dist', 'grind-md', cb);
+  runSequence('clean-dist', 'grind-md', 'copy-cp', cb);
 });
 
 // clean dist
@@ -41,7 +41,7 @@ gulp.task('clean-indices', ()=>{
 
 // copy cp directory over
 gulp.task('copy-cp',()=>{
-  return gulp.src('./src/cp/*')
+  return gulp.src('./src/cp/*/*')
     .pipe(gulp.dest('./dist/'));
 });
 
