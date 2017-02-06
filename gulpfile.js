@@ -41,7 +41,7 @@ gulp.task('clean-indices', ()=>{
 
 // copy cp directory over
 gulp.task('copy-cp',()=>{
-  return gulp.src('./src/cp/*/*')
+  return gulp.src(['./src/cp/*', './src/cp/*/*'])
     .pipe(gulp.dest('./dist/'));
 });
 
