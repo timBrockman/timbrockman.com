@@ -4,9 +4,10 @@
   "description": "Personal Static Site for Tim Brockman",
   "main": "index.js",
   "scripts": {
+    "start":"eleventy --serve",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "",
-    "deploy": "git subtree push --prefix dist origin gh-pages"
+    "build": "eleventy",
+    "deploy": "git subtree push --prefix _site origin gh-pages"
   },
   "repository": {
     "type": "git",
