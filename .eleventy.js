@@ -15,11 +15,20 @@ module.exports = function(eleventyConfig){
     //plugins
     eleventyConfig.addPlugin(pluginNavigation);
     eleventyConfig.addPlugin(pluginRss);
-    //eleventyConfig.addPlugin(pluginSyntaxHighlight);
     eleventyConfig.addPlugin(pluginAmp,{ imageOptimization: true });
     eleventyConfig.addPlugin(pluginImage);   
 
+    
+    //filters
+
+    //shortcodes
+
+    //collections
+
+
     //directories and such
+    eleventyConfig.addPassthroughCopy("src/cp");
+
     return{
         dir: {
             input: "src",
