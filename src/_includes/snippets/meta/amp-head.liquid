@@ -1,13 +1,13 @@
 <head>
     <meta charset="UTF-8">
-{% include './src/snippets/meta/amp-components.liquid' %}
+{% include 'snippets/meta/amp-components.liquid' %}
 
 <!-- end initial amp stuff and includes -->
 
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
-    <title>{{file.page.title}} - {{file.site.title}}</title>
+    <title>{{page.title}} - {{site.title}}</title>
 
-{% include './src/snippets/meta/favicons.liquid' %}
+{% include 'snippets/meta/favicons.liquid' %}
 
 <!--cssstart-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jockey+One|Cairo">
@@ -16,9 +16,9 @@
 
 
 <!-- more amp -->
-    <link rel="canonical" href="{{file.site.url}}/{{file.page.permalink}}" />
-{% include './src/snippets/meta/amp-ld-json.liquid' %}
-{% include './src/snippets/meta/amp-boilerplate.liquid' %}
-{% include './src/snippets/meta/amp-custom-style.liquid' %}
+    <link rel="canonical" href="{{site.url}}/{{page.permalink}}" />
+{% include 'snippets/meta/amp-ld-json.liquid' %}
+{% include 'snippets/meta/amp-boilerplate.liquid' %}
+{% include 'snippets/meta/amp-custom-style.liquid' %}
   
 </head>

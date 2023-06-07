@@ -5,7 +5,7 @@
 */
 
 // import plugins from package.json
-const pluginImage = require("@11ty/eleventy-img");
+//const pluginImage = require("@11ty/eleventy-img");
 //const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginAmp = require("@ampproject/eleventy-plugin-amp");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
