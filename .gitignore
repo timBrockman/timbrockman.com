@@ -2,3 +2,5 @@ node_modules/
 src/images/
 .DS_store
 .cache
+olddist/
+_site/
