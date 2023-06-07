@@ -15,10 +15,10 @@ fancy stuff when supported
 
 html {
   /* vars */
-  --bg-color: #65544f;/*#504242;*/
-  --bg-hi-color: black;
-  --base-color:black;
-  --hi-color:lightskyblue;
+  --bg-color: #ffffff;/*#504242;*/
+  --bg-hi-color: #f9f9f9;
+  --base-color: #000000;
+  --hi-color:#2378ab;
   --source:"courier new", courier, monospace;
   --hs: "Jockey One", Impact, "sans serif";
   --triangle: 160px;/*formerly 40vh, but jangles on softkey drawer and menu bar in some mobile chromes*/
@@ -56,7 +56,7 @@ html {
   justify-content: center;
   align-items: center;
   text-align: center;
-  border-top: solid var(--hi-color) .8rem;
+  border-top: solid var(--bg-hi-color) .8rem;
 }
 .navcolumn a, 
 .navcolumn header{
@@ -244,7 +244,7 @@ h1, h2, h3, h4, h5, h6, .dropout{
   margin: 0px;
 }
 h4, h5, h6, .dropout {
-  background-color: var(--base-color);
+  background-color: var(--bg-color);
   padding-left: .8rem;
 }
 .secBody h1,
@@ -421,7 +421,7 @@ footer{
   font-family: impact, sans-serif;/* ie */
   font-family: var(--hs);
   text-transform: uppercase;
-  background-color: var(--base-color);
+  background-color: var(--bg-color);
 }
 /* oh yay ie doesn't support @supports... lol */
 /* ie, edge, others*/
