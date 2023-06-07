@@ -1,7 +1,7 @@
 /* eleventy config file
-    - add plugins
-    - add directories
-    
+  - add plugins
+  - add directories
+  
 */
 
 // import plugins from package.json
@@ -12,29 +12,36 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 
 module.exports = function(eleventyConfig){
-    //plugins
-    eleventyConfig.addPlugin(pluginNavigation);
-    eleventyConfig.addPlugin(pluginRss);
-    eleventyConfig.addPlugin(pluginAmp,{ imageOptimization: true });
-    eleventyConfig.addPlugin(pluginImage);   
+  //plugins
+  eleventyConfig.addPlugin(pluginNavigation);
+  eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(pluginAmp,{ imageOptimization: true });
+  //eleventyConfig.addPlugin(pluginImage);   
 
-    
-    //filters
+  // Enable AMP tags in markdown
+  let markdownIt = require('markdown-it');
+  let options = {
+    html: true,
+    breaks: true,
+    linkify: true,
+  };
+  eleventyConfig.setLibrary('md', markdownIt(options));
+  //filters
 
-    //shortcodes
+  //shortcodes
 
-    //collections
+  //collections
 
 
-    //directories and such
-    eleventyConfig.addPassthroughCopy("src/cp");
+  //directories and such
+  eleventyConfig.addPassthroughCopy({"src/cp":"./"});
 
-    return{
-        dir: {
-            input: "src",
-            includes: "_includes",
-            data: "_data",
-            output: "_site"
-          },
-    };
+  return{
+    dir: {
+      input: "src",
+      includes: "_includes",
+      data: "_data",
+      output: "_site"
+    },
+  };
 };
