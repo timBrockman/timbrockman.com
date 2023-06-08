@@ -15,7 +15,7 @@ module.exports = function(eleventyConfig){
   //plugins
   eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(pluginAmp,{ imageOptimization: true });
+  eleventyConfig.addPlugin(pluginAmp,{ imageOptimization: true, validation: false,});
   //eleventyConfig.addPlugin(pluginImage);   
 
   // Enable AMP tags in markdown

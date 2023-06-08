@@ -1,5 +1,6 @@
 ---
 layout: layouts/default.liquid
+templateEngineOverride: liquid,md
 categories: 
   - root
 title: "Professional Profile"
