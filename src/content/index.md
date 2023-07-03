@@ -1,5 +1,5 @@
 ---
-layout: layouts/default.liquid
+layout: layouts/profile.liquid
 templateEngineOverride: liquid,md
 categories: 
   - root
