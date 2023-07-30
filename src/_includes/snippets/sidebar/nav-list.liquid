@@ -1,17 +1,13 @@
-{% for item in site.categories.root %}
-  {% if item == 'index' %}
-    <a href="{{item | replace: "/\W+/g", '-'}}.html">Profile</a>
-  {% else %}
-    <a href="{{item | replace: "/\W+/g", '-'}}.html">{{item}}</a>
-  {% endif %}
+{% for item in collections.root %}
+  <a href="{{item.url}}">{{item.data.title}}</a>
 {% endfor %}
 <amp-accordion>
   <section>
     <header><span class="showmore">+</span><span class="showless">-</span> Projects <span class="showmore">+</span><span class="showless">-</span></header>
     <nav>
       <ul>
-{% for item in site.categories.projects %}
-        <li><a href="{{item | replace: "/\W+/g", '-'}}.html">{{item}}</a></li>
+{% for item in collections.projects %}
+        <li><a href="{{item.url}}">{{item.data.title}}</a></li>
 {% endfor %}
       </ul>
     </nav>
@@ -20,8 +16,8 @@
     <header><span class="showmore">+</span><span class="showless">-</span> Articles <span class="showmore">+</span><span class="showless">-</span></header>
     <nav>
       <ul>
-{% for item in site.categories.articles %}
-        <li><a href="{{item | replace: "/\W+/g", '-' | downcase }}.html">{{item}}</a></li>
+{% for item in collections.articles %}
+        <li><a href="{{item.url}}">{{item.data.title}}</a></li>
 {% endfor %}
       </ul>
     </nav>

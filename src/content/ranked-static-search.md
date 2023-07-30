@@ -1,13 +1,15 @@
 ---
-categories: 
-  - projects
-tags: 
+layout: layouts/default.liquid
+draft: false
+tags:
+  - projects 
   - JavaScript
   - node.js
   - tf-idf
   - ranked search
+date: 2015-05-30
 title: "Ranked Static Search (node.js)"
-subtitle: "Created: May 2015"
+subtitle: "TF-IDF indexing of static content using Node."
 imagePrefix: "static-search"
 imageAlt: "Ranked Static Search (node.js)"
 stub: "By indexing static content with this tool, ranked search results become possible on static sites."

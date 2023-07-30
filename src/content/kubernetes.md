@@ -1,10 +1,12 @@
 ---
-categories:
+layout: layouts/default.liquid
+draft: false
+tags:
   - projects
-tags: 
   - Kubernetes
   - Docker
   - Open Source 
+date: 2016-06-11
 title: "Kubernetes (k8s.io)"
 subtitle: "Contributions: May - June 2016"
 imagePrefix: "k8s"

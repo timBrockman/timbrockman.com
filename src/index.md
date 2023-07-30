@@ -1,8 +1,9 @@
 ---
 layout: layouts/default.liquid
 templateEngineOverride: liquid,md
-categories: 
+tags:
   - root
+date: Last Modified
 title: "Professional Profile"
 subtitle: "Web Development and IT Management"
 imagePrefix: "projects"

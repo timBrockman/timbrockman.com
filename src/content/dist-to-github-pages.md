@@ -1,12 +1,13 @@
 ---
+layout: layouts/default.liquid
 draft: false
-categories: 
-  - articles
 tags: 
+  - articles
   - quick tips
   - Git
   - Github
   - Github Pages
+date: 2016-12-01
 title: "./dist to Github Pages"
 subtitle: "subtree pushing a build to gh-pages"
 imagePrefix: "projects"
