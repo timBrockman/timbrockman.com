@@ -13,9 +13,17 @@ footerLink: "./dl/dev-res.pdf"
 footerText: "Developer Resume (pdf)"
 ---
 
-#### h4
-##### h5
-###### h6
+##### Current Endeavors
+###### Full Stack Developer
+
+
+
+###### Masters of Science in Data Science
+
+The University of Colorado Boulder officially accepted me into it's MS-DS program at the begining of 2023. I'm very proud to have be part of such an innovative and inclusive program. This really struck me when I recieved the official letter in the mail (along with some nice swag). This wasn't something that existed 5 or 10 years ago.
+
+Thus far, most of the time spent in this program is working on coursework. On the side I'm doing some research into tracking stuff in space, and keeping up with the new NLP advancements.
+
 
 ---
 
