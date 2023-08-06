@@ -16,7 +16,7 @@ footerText: "Developer Resume (pdf)"
 ##### Current Endeavors
 ###### Full Stack Developer
 
-
+My position at Katmai Government Services has been a great opportunity for growth and exploration. My role started with the goal to update some in-house line of business applications.
 
 ###### Masters of Science in Data Science
 
