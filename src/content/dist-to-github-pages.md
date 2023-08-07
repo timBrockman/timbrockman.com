@@ -2,7 +2,7 @@
 layout: layouts/default.liquid
 draft: false
 tags: 
-  - articles
+  - posts
   - quick tips
   - Git
   - Github

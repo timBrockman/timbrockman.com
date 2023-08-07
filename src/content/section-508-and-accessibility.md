@@ -2,7 +2,7 @@
 layout: layouts/default.liquid
 draft: false
 tags:
-  - articles
+  - posts
   - a11y
   - section 508
   - quick tips
