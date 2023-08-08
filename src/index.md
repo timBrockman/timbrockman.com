@@ -14,11 +14,13 @@ footerText: "Developer Resume (pdf)"
 ---
 
 ##### Current Endeavors
-As a Data Science student and Full Stack developer, it's recently been my focus to try to both collect better data and make it opperational, both in the projects I'm developing and for the stake holders it would be valuable to. Good data can uncover many opportunities for improvement.
+As a Data Science student and Full Stack developer, I'm collect better data and make it more opperational, both in the projects I'm developing and for the stake holders it would be valuable to. Good data can uncover new opportunities for improvement, refinement, or automation.
 
 ###### Full Stack Developer
 
-My position at Katmai Government Services has been a great opportunity for growth and exploration. My role started with the goal to update some in-house line of business applications.
+My position at Katmai Government Services has been a great opportunity for growth and exploration. My role started with the goal to update some in-house line of business applications. Like many developers in small departments, your role quickly expands. You become the defacto cloud architect, database admin, DevSecOps, SRE, support tech, and whatever else could help the company.
+I've been able to: 
+ - build and admin React
 
 ###### Masters of Science in Data Science
 
