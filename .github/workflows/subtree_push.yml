@@ -1,0 +1,17 @@
+name: Subtree Push
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  subtree-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install git-subtree
+        run: sudo apt-get update && sudo apt-get install git-subtree -y
+      - name: Push to gh-pages
+        run: git subtree push --prefix _site origin gh-pages
