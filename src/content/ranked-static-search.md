@@ -10,7 +10,7 @@ tags:
 date: 2015-05-30
 title: "Ranked Static Search (node.js)"
 subtitle: "TF-IDF indexing of static content using Node."
-imagePrefix: "static-search"
+imagePrefix: "4"
 imageAlt: "Ranked Static Search (node.js)"
 stub: "By indexing static content with this tool, ranked search results become possible on static sites."
 footerLink: "https://github.com/timBrockman/ranked-static-search"

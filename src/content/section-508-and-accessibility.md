@@ -11,7 +11,7 @@ tags:
 date: 2017-01-05
 title: "Accessibility, 508 Free, tl;dr"
 subtitle: "Free Section 508 certification and a Free a11y tl;dr checklist"
-imagePrefix: "projects"
+imagePrefix: "5"
 imageAlt: "Free Section 508 certification and a Free a11y tl;dr checklist"
 stub: "this is a placeholder"
 footerLink: "https://github.com/timBrockman/timBrockman.github.io/blob/master/a11y_checklist.md"

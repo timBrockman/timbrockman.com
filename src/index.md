@@ -6,7 +6,7 @@ tags:
 date: Last Modified
 title: "Professional Profile"
 subtitle: "Developing intelligent software solutions"
-imagePrefix: "projects"
+imagePrefix: "1"
 imageAlt: "Professional Profile"
 stub: "Developing intelligent software solutions"
 footerLink: "./dl/dev-res.pdf"
