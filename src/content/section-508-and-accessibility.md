@@ -18,7 +18,6 @@ footerLink: "https://github.com/timBrockman/timBrockman.github.io/blob/master/a1
 footerText: "a11y tl;dr checklist"
 ---
 
-![image](https://unsplash.it/500/400)
 {% gist "a19e811dcd7df10c4da0931641538497" 250 %}
 official checklist
 https://www.hhs.gov/web/section-508/making-files-accessible/checklist/html/index.html
