@@ -1,0 +1,35 @@
+{% for item in collections.root %}
+  <a href="{{item.url}}">{{item.data.title}}</a>
+{% endfor %}
+<amp-accordion>
+  <section>
+    <header><span class="showmore">+</span><span class="showless">-</span> Projects <span class="showmore">+</span><span class="showless">-</span></header>
+    <nav>
+      <ul>
+{% for item in collections.projects %}
+        <li><a href="{{item.url}}">{{item.data.title}}</a></li>
+{% endfor %}
+      </ul>
+    </nav>
+  </section>
+  <section>
+    <header><span class="showmore">+</span><span class="showless">-</span> Posts <span class="showmore">+</span><span class="showless">-</span></header>
+    <nav>
+      <ul>
+{% for item in collections.posts %}
+        <li><a href="{{item.url}}">{{item.data.title}}</a></li>
+{% endfor %}
+      </ul>
+    </nav>
+  </section>
+  <section>
+    <header><span class="showmore">+</span><span class="showless">-</span> Learning <span class="showmore">+</span><span class="showless">-</span></header>
+    <nav>
+      <ul>
+{% for item in collections.learning %}
+        <li><a href="{{item.url}}">{{item.data.title}}</a></li>
+{% endfor %}
+      </ul>
+    </nav>
+  </section>
+</amp-accordion>

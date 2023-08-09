@@ -1,0 +1,24 @@
+<head>
+    <meta charset="UTF-8">
+{% include 'snippets/meta/amp-components.liquid' %}
+
+<!-- end initial amp stuff and includes -->
+
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
+    <title>{{title}} - {{site.title}}</title>
+
+{% include 'snippets/meta/favicons.liquid' %}
+
+<!--cssstart-->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jockey+One|Cairo">
+<!--cssend-->
+<!-- amp styles -->
+
+
+<!-- more amp -->
+    <link rel="canonical" href="{{site.url}}/{{permalink}}" />
+{% include 'snippets/meta/amp-ld-json.liquid' %}
+{% include 'snippets/meta/amp-boilerplate.liquid' %}
+{% include 'snippets/meta/amp-custom-style.liquid' %}
+  
+</head>

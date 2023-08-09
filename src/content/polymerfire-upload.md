@@ -1,14 +1,16 @@
 ---
-categories: 
+layout: layouts/default.liquid
+draft: false
+tags:
   - projects
-tags: 
   - Polymer
   - Firebase
   - Polymerfire
   - Web Components 
+date: "2016-07-04"
 title: "Polymerfire Image Upload"
-subtitle: "Created: July 2016"
-imagePrefix: "polymerfire-image-upload"
+subtitle: "Polymer web component to upload images to Firebase"
+imagePrefix: "3"
 imageAlt: "Polymerfire Image Upload"
 stub: "Firebase Image Upload is a simple Polymer element using PolymerFire to upload images (or files) to Firebase Storage."
 footerLink: "https://github.com/timBrockman/firebase-image-upload"

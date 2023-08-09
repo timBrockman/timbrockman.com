@@ -1,15 +1,16 @@
 ---
+layout: layouts/default.liquid
 draft: false
-categories: 
-  - articles
 tags: 
+  - posts
   - quick tips
   - Git
   - Github
   - Github Pages
+date: 2016-12-01
 title: "./dist to Github Pages"
 subtitle: "subtree pushing a build to gh-pages"
-imagePrefix: "projects"
+imagePrefix: "2"
 imageAlt: "git subtree push --prefix dist origin gh-pages"
 stub: "this is a placeholder"
 footerLink: "https://github.com/timBrockman/nightcrawler-orlando/blob/master/package.json#L13"

@@ -1,11 +1,13 @@
 ---
-categories: 
+layout: layouts/default.liquid
+draft: false
+tags:
   - projects
-tags: 
   - Polymer
   - Progressive Web Apps
   - Open Source
-  - Front End Development 
+  - Front End Development
+date: 2016-05-29
 title: "Polymer Elements - App Layout"
 subtitle: "Contributions: May 2016"
 imagePrefix: "app-layout"
