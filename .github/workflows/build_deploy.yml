@@ -1,0 +1,21 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
+      - name: Build site
+        run: npm run build
+      - name: Install git-subtree
+        run: sudo apt-get update && sudo apt-get install git-subtree -y
+      - name: Push to gh-pages
+        run: git subtree push --prefix _site origin gh-pages
