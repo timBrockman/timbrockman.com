@@ -16,10 +16,15 @@ jobs:
           node-version: 18
       - run: npm ci
       - run: npm run build
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: github-pages
+          path: |
+            _site
   deploy:
     needs: build
-    environment:
-      name: _site
+  
     permissions:
       pages: write
       id-token: write
