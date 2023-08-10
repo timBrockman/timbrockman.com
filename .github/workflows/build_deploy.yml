@@ -23,12 +23,15 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.0
-        with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: _site # The folder the action should deploy.
-        
+      #- name: Deploy
+      #  uses: JamesIves/github-pages-deploy-action@4.1.0
+      #  with:
+      #    branch: gh-pages # The branch the action should deploy to.
+      #    folder: _site # The folder the action should deploy.
+  #trigger the actual static deploy
+  static_workflow:
+    uses: ./.github/workflows/static.yml
+    
 #        uses: peaceiris/actions-gh-pages@v3
 #        with:
 #          github_token: ${{ secrets.GITHUB_TOKEN }}
