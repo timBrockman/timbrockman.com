@@ -19,7 +19,7 @@ jobs:
   deploy:
     needs: build
     environment:
-      name: _src
+      name: _site
     
     runs-on: ubuntu-latest
     steps:
