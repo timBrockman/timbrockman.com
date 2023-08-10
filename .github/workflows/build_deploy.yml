@@ -7,42 +7,24 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        
       - uses: actions/setup-node@v3
         with: 
-          node-version: 18
-      - run: npm ci
-      - run: npm run build
-      - name: Archive production artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: github-pages
-          path: _site
+          node-version: latest
+      
+      - name: Install
+        run: npm ci
+      
+      - name: Build
+        run: npm run build
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
-#  deploy:
-#    needs: build
-    
-#    permissions:
-#      pages: write
-#      id-token: write
-#    environment:
-#      name: github-pages
-#      url: ${{ steps.deployment.outputs.page_url }}
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: Deploy to GitHub Pages
-#        id: deployment
-#        uses: actions/deploy-pages@v2
-    #steps:
-    #  - name: Install git-subtree
-    #    run: sudo apt-get update && sudo apt-get install git-subtree -y
-    #  - name: Push to gh-pages
-    #    run: git subtree push --prefix _site origin gh-pages
