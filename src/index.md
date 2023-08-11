@@ -18,7 +18,7 @@ As a Data Science student and Full Stack developer, I'm collecting better data a
 
 ###### Full Stack Developer
 
-My position at Mandatory Government Services has been a great opportunity for growth and exploration. My role started with the goal to update some in-house line of business applications. Like many developers in small departments, your role quickly expands. You become the de facto cloud architect, database admin, DevSecOps, SRE, support tech, and whatever else could help the company.
+My position at Katmai Government Services has been a great opportunity for growth and exploration. My role started with the goal to update some in-house line of business applications. Like many developers in small departments, your role quickly expands. You become the de facto cloud architect, database admin, DevSecOps, SRE, support tech, and whatever else could help the company.
 I've been able to: 
  - Gain greater security awareness (and a lot of training)
  - Maintain a better focus on Accessibility
