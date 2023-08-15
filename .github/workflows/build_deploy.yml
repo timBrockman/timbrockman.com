@@ -25,7 +25,6 @@ jobs:
         
       - name: Archive production artifacts
         uses: actions/upload-pages-artifact@v1
-        # uses: actions/upload-artifact@v3
         with:
           name: github-pages
           path: _site
@@ -47,17 +46,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-
-#- name: Deploy
-#  uses: JamesIves/github-pages-deploy-action@4.1.0
-#  with:
-#    branch: gh-pages # The branch the action should deploy to.
-#    folder: _site # The folder the action should deploy.
-#trigger the actual static deploy
-#static_workflow:
-#  uses: ./.github/workflows/static.yml
-    
-#        uses: peaceiris/actions-gh-pages@v3
-#        with:
-#          github_token: ${{ secrets.GITHUB_TOKEN }}
-#          publish_dir: ./_site
