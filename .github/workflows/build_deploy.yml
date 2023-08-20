@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+  workflow_dispatch:
 
 jobs:
   build:
@@ -11,11 +12,37 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Install dependencies
-        run: npm install
-      - name: Build site
+        
+      - uses: actions/setup-node@v3
+        with: 
+          node-version: latest
+      
+      - name: Install
+        run: npm ci
+      
+      - name: Build
         run: npm run build
-      - name: Install git-subtree
-        run: sudo apt-get update && sudo apt-get install git-subtree -y
-      - name: Push to gh-pages
-        run: git subtree push --prefix _site origin gh-pages
+        
+      - name: Archive production artifacts
+        uses: actions/upload-pages-artifact@v1
+        with:
+          name: github-pages
+          path: _site
+  
+  deploy:
+    needs: build
+    
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
