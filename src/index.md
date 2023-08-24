@@ -36,7 +36,7 @@ I've been able to:
  - Update and refactor my code over the past 6 years as things change
  - Write tests and documentation
  - Wish I had written more tests and better documentation
- - Migrate from on-Safeguarding and other cloud services to Azure GCC High
+ - Migrate from on-prem and other cloud services to Azure GCC High
 
 ###### Masters of Science in Data Science
 
