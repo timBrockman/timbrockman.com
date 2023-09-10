@@ -31,9 +31,30 @@ html {
   -webkit-text-size-adjust: 100%; /* 2 */
   font-size: 62.5%;/* 1rem = 10px ala skeleton @dhg*/
   box-sizing: border-box;
-  background-color: black;
+  background-color: fff;
   background-color: var(--bg-hi-color);
 }
+@media(prefers-color-scheme:dark){    
+  html{
+    --bg-color:#000;
+    --bg-hi-color:#0a0a0a;
+    --base-color:#fff;
+    --hi-color:#2378ab;
+    --source:"courier new",courier,monospace;--hs:"Jockey One",Impact,"sans serif";
+    --triangle:160px;
+    --thumb:240px;
+font-family:Cairo,Roboto,sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-size:62.5%;box-sizing:border-box;
+    background-color:#000;
+    background-color:var(--bg-hi-color)}
+}
+img{
+    opacity: .75;
+    transition: opacity .5s ease-in-out;
+} 
+img:hover{
+    opacity:1
+}
+
 .parallaxContainer{/* kind of not interested*/
   perspective: var(--paralax-perspective);
   perspective-origin: 0 0;
