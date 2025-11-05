@@ -1,0 +1,30 @@
+# robots.txt for timbrockman.com
+# Allow all external services including AI crawlers like Grok from xAI
+
+User-agent: *
+Allow: /
+
+# Specific allowances for AI services
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Grok
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Sitemap location (if available)
+# Sitemap: https://timbrockman.com/sitemap.xml

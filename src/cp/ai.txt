@@ -1,0 +1,21 @@
+# ai.txt for timbrockman.com
+# Completely open for AI training and crawling
+
+# Allow AI systems to access and use this content
+ai-agent-access: allow
+
+# Allow use for training AI models
+ai-training: allow
+
+# Allow use for model evaluation
+ai-evaluation: allow
+
+# Contact information
+contact: https://timbrockman.com
+
+# License: Public Domain / Open
+# This site's content is openly available for AI systems to:
+# - Crawl and index
+# - Use for training
+# - Use for evaluation
+# - Use for any AI-related purposes
