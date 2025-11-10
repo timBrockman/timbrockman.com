@@ -10,7 +10,7 @@
 const pluginAmp = require("@ampproject/eleventy-plugin-amp");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginNavigation = require("@11ty/eleventy-navigation");
-const { pluginMermaid } = require("@kevingimbel/eleventy-plugin-mermaid");
+const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
 
 module.exports = function(eleventyConfig){
   //plugins
@@ -18,8 +18,7 @@ module.exports = function(eleventyConfig){
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginAmp,{ imageOptimization: true, validation: false,});
   eleventyConfig.addPlugin(pluginMermaid, {
-    outputDir: "_site/assets/mermaid",  // Publicly accessible
-    mermaid: {
+    mermaid_config: {
       theme: "dark",
       themeVariables: {
         primaryColor: "#fe9",
