@@ -10,13 +10,14 @@
 const pluginAmp = require("@ampproject/eleventy-plugin-amp");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginNavigation = require("@11ty/eleventy-navigation");
-const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
+//const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
 
-module.exports = function(eleventyConfig){
+module.exports = function (eleventyConfig) {
   //plugins
   eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(pluginAmp,{ imageOptimization: true, validation: false,});
+  eleventyConfig.addPlugin(pluginAmp, { imageOptimization: true, validation: false, });
+  /*
   eleventyConfig.addPlugin(pluginMermaid, {
     mermaid_config: {
       theme: "dark",
@@ -28,6 +29,7 @@ module.exports = function(eleventyConfig){
       }
     }
   });
+  */
   //eleventyConfig.addPlugin(pluginImage);   
 
   // Enable AMP tags in markdown
@@ -41,6 +43,7 @@ module.exports = function(eleventyConfig){
   //filters
 
   //shortcodes
+  /*
   //mermaidamp (mermaid svg wrapped in ampimg) 
   eleventyConfig.addPairedShortcode("mermaidamp", function(content, alt = "Diagram") {
     // Generate a hash from content to avoid filename collisions
@@ -50,13 +53,14 @@ module.exports = function(eleventyConfig){
     // Use your existing ampimg shortcode
     return `{% ampimg src="${svgPath}" alt="${alt}" width="600" height="400" layout="responsive" %}`;
   });
+  */
   //collections
 
 
   //directories and such
-  eleventyConfig.addPassthroughCopy({"src/cp":"./"});
+  eleventyConfig.addPassthroughCopy({ "src/cp": "./" });
 
-  return{
+  return {
     dir: {
       input: "src",
       includes: "_includes",
