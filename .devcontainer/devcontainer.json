@@ -2,7 +2,8 @@
   "name": "timbrockman.com",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bookworm",
   "features": {
-    "ghcr.io/devcontainers/features/git:1": {}
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/git-lfs:1": {}
   },
   "postCreateCommand": "npm install && npx playwright install --with-deps",
   "customizations": {
