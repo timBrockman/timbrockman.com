@@ -13,57 +13,37 @@ footerLink: "./dl/dev-res.pdf"
 footerText: "Developer Resume (pdf)"
 ---
 
-##### Current Endeavors
-As a Data Science student and Full Stack developer, I'm collecting better data and making it more opperational. Good data leads to new opportunities.
+# Tim Brockman
 
-###### Full Stack Developer
+**Full-Stack Engineer | Generative AI for Public Sector**
 
-My position at Katmai Government Services has been a great opportunity for growth and exploration. My role started with the goal to update some in-house line of business applications. Like many developers in small departments, your role quickly expands. You become the de facto cloud architect, database admin, DevSecOps, SRE, support tech, and whatever else could help the company.
-I've been able to: 
- - Gain greater security awareness (and a lot of training)
- - Maintain a better focus on Accessibility
- - Work with a lot of people across the business's many contracts and companies
- - Build and admin a production Kubernetes cluster on bare metal using VMWare/vSphere for 6 years
- - Build and admin a GitLab Enterprise server for over 6 years
- - Build and admin Databases using SQL Server, MySQL, and PostgreSQL
- - Work with both Linux and Windows servers
- - Secure and update a critical PHP4 application not updated since 2003
- - Containerize some existing applications
- - Transition some parts of monolithic applications to microservice architecture
- - Build new GraphQL and Rest APIs
- - Build and secure applications and work with SAML, LDAP, OAuth, and JWTs
- - Build fast React interfaces with clever caching strategies
- - Update and refactor my code over the past 6 years as things change
- - Write tests and documentation
- - Wish I had written more tests and better documentation
- - Migrate from on-prem and other cloud services to Azure GCC High
+I help government organizations adopt practical AI capabilities without sacrificing the security, compliance, and operational rigor their missions require.
 
-###### Masters of Science in Data Science
+I'm a full-stack engineer at Deloitte focused on Generative AI application development and modern platform work for government clients.
 
-The University of Colorado Boulder officially accepted me into it's MS-DS program at the beginning of 2023. I'm very proud to have be part of such an innovative and inclusive program. This really struck me when I received the official letter in the mail (along with some nice swag). This wasn't something that existed 5 or 10 years ago.
+Most recently, I designed and built a custom Generative AI application that converts large volumes of organizational documentation into structured competency models. The system runs on AWS Bedrock with Claude and incorporates careful prompt engineering, retrieval patterns, and human-in-the-loop validation to produce traceable, auditable outputs suitable for public sector use.
 
-Thus far, most of the time spent in this program is working on coursework. On the side I'm doing some research into tracking stuff in space, and keeping up with the new NLP advancements.
+My platform experience includes ServiceNow, where I specialize in integration and custom development on the HRSD platform. This work has involved delivering high-visibility implementations under tight timelines while meeting complex compliance and operational requirements.
 
+That platform experience builds on a strong foundation in large-scale infrastructure modernization, secure cloud environments, and service development. I tend to approach AI systems with the same engineering discipline I apply to infrastructure: they need to be observable, versionable, testable, and maintainable by real teams over time.
+
+**Active Security Clearance**
+
+Prior to my current role, I spent several years as a Full-Stack Web Developer at Katmai Government Services. I began by modernizing in-house line-of-business applications and gradually took on broader responsibilities as the de facto cloud architect, database administrator, DevSecOps engineer, and site reliability contributor. Key work included building and operating a production Kubernetes cluster on bare metal (VMware/vSphere) for over six years, managing a GitLab Enterprise instance, administering SQL Server, MySQL, and PostgreSQL databases, containerizing applications, and migrating workloads into secure Azure GCC High environments under FedRAMP, NIST, and CMMC compliance frameworks. I also contributed to open-source projects including AMP and Kubernetes.io, with a consistent focus on security, accessibility (Section 508), and long-term maintainability.
+
+I'm currently completing an M.S. in Data Science at the University of Colorado Boulder with a focus on applied machine learning and responsible AI deployment.
+
+**Certifications**
+- ServiceNow Certified System Administrator (CSA)
+- ServiceNow Certified Application Developer (CAD)
+- ServiceNow HRSD Professional
+- Certified Ethical Hacker (CEH)
+- EC-Council Certified Security Analyst (ECSA)
+- Computer Hacking Forensic Investigator (CHFI)
 
 ---
 
-##### Education & Certifications
-
-- **University of Colorado Boulder** - Master of Science, Data Science (in progress)
-- **University of Central Florida** - Bachelor of Fine Arts, Graphic Design
-- **University of Maryland** - Technology Entrepreneurship
-- **Udacity** - Front End Web Developer NanoDegree
-- **ECCouncil** - ECSA EC-Council Certified Security Analyst
-- **ECCouncil** - CEH Certified Ethical Hacker
-- **Microsoft** - AZ 900 Azure Fundamentals
-- **DoD** - Identifying and Safeguarding PII
-- **DoD** - Safeguarding CUI Training
-- **508 Universe** - Designing Accessible Websites Certificate
-- **508 Universe** - Accessible Video and Multimedia Certificate
-
----
 ##### Community Involvement
-
 
 ###### Open Source Contributions
 Starting in early 2016, I began contributing to some of my favorite open source projects on GitHub. Lately I've been slacking on making any substantial contributions to good open source projects. Additionally, I've become a little paranoid about what I make available on platforms such as GitHub. Its important to help other developers so I'll try to do better.
