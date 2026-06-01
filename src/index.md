@@ -1,5 +1,5 @@
 ---
-layout: layouts/default.liquid
+layout: default.liquid
 templateEngineOverride: liquid,md
 tags:
   - root
