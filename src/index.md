@@ -5,7 +5,7 @@ tags:
   - root
 date: Last Modified
 title: "Professional Profile"
-subtitle: "Full-Stack Engineer | Generative AI for Public Sector"
+subtitle: "Recent Experience"
 imagePrefix: "1"
 imageAlt: "Professional Profile"
 stub: "Recent Experience"
