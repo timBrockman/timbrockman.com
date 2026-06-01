@@ -8,7 +8,7 @@ title: "Professional Profile"
 subtitle: "Full-Stack Engineer | Generative AI for Public Sector"
 imagePrefix: "1"
 imageAlt: "Professional Profile"
-stub: "Full-Stack Engineer | Generative AI for Public Sector"
+stub: "Recent Experience"
 footerLink: "./dl/dev-res.pdf"
 footerText: "Developer Resume (pdf)"
 ---
