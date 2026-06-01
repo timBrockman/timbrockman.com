@@ -5,17 +5,13 @@ tags:
   - root
 date: Last Modified
 title: "Professional Profile"
-subtitle: "Developing intelligent software solutions"
+subtitle: "Full-Stack Engineer | Generative AI for Public Sector"
 imagePrefix: "1"
 imageAlt: "Professional Profile"
-stub: "Developing intelligent software solutions"
+stub: "Full-Stack Engineer | Generative AI for Public Sector"
 footerLink: "./dl/dev-res.pdf"
 footerText: "Developer Resume (pdf)"
 ---
-
-# Tim Brockman
-
-**Full-Stack Engineer | Generative AI for Public Sector**
 
 I help government organizations adopt practical AI capabilities without sacrificing the security, compliance, and operational rigor their missions require.
 
