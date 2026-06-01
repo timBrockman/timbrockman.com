@@ -1,4 +1,4 @@
-const pluginAmp = require("eleventy-plugin-amp");
+const pluginAmp = require("@ampproject/eleventy-plugin-amp");
 
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginNavigation = require("@11ty/eleventy-navigation");
@@ -55,6 +55,7 @@ module.exports = function(eleventyConfig) {
     dir: {
       input: "src",
       output: "_site",
+      data: "_data",
       includes: "_includes",
       layouts: "_includes/layouts"
     },
