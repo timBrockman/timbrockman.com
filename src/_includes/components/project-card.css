@@ -1,0 +1,71 @@
+/* ============================================
+   Project Card with Triangular Clip-Path
+   VT-100 inspired styling (green accents on dark background)
+   ============================================ */
+.project-card {
+  background: #111;
+  border: 1px solid #00cc00;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Signature triangular clip-path - preserved and enhanced */
+.triangle-clip {
+  clip-path: polygon(
+    0 0, 
+    100% 0, 
+    100% calc(100% - 24px), 
+    calc(100% - 24px) 100%, 
+    0 100%
+  );
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 0 1px #00ff00;
+}
+
+.project-card__title {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.35rem;
+  color: #00ff00;
+}
+
+.project-card__role {
+  margin: 0 0 1rem 0;
+  font-size: 0.95rem;
+  color: #888;
+  font-family: monospace;
+}
+
+.project-card__image img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  border: 1px solid #222;
+}
+
+.project-card__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.tech-pill {
+  background: #1a1a1a;
+  color: #00cc00;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.8rem;
+  border: 1px solid #00cc00;
+  font-family: monospace;
+}
+
+.project-card__footer {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}

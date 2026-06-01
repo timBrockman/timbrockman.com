@@ -1,0 +1,40 @@
+/* ============================================
+   Project Card + Site Layout Styles
+   VT-100 inspired with preserved triangular clip-path
+   ============================================ */
+
+/* Site wrapper for consistent max-width and padding */
+.site-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Main content area with signature triangular clip-path */
+.main-content {
+  background: #111;
+  border: 1px solid #00cc00;
+  padding: 2rem;
+  margin-top: 1.5rem;
+}
+
+/* Your existing triangular clip-path signature - enhanced */
+.triangle-clip {
+  clip-path: polygon(
+    0 0, 
+    100% 0, 
+    100% calc(100% - 24px), 
+    calc(100% - 24px) 100%, 
+    0 100%
+  );
+}
+
+/* Basic responsive improvements */
+@media (max-width: 768px) {
+  .site-wrapper {
+    padding: 0.5rem;
+  }
+  .main-content {
+    padding: 1.25rem;
+  }
+}

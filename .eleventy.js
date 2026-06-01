@@ -1,24 +1,46 @@
-/* eleventy config file
-  - add plugins
-  - add directories
-  
-*/
-
-// import plugins from package.json
-//const pluginImage = require("@11ty/eleventy-img");
-//const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginAmp = require("@ampproject/eleventy-plugin-amp");
+
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 
-
-module.exports = function (eleventyConfig) {
-  //plugins
+module.exports = function(eleventyConfig) {
+  // ============================================
+  // Existing Plugins
+  // ============================================
   eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(pluginAmp, { imageOptimization: true, validation: false, });
+  eleventyConfig.addPlugin(pluginAmp, { 
+    imageOptimization: true, 
+    validation: false 
+  });
 
-  //eleventyConfig.addPlugin(pluginImage);   
+  // ============================================
+  // Collections
+  // ============================================
+  eleventyConfig.addCollection("projects", function(collectionApi) {
+    return collectionApi
+      .getFilteredByGlob("src/content/projects/*.md")
+      .sort((a, b) => (a.data.order || 99) - (b.data.order || 99));
+  });
+
+  eleventyConfig.addCollection("posts", function(collectionApi) {
+    return collectionApi
+      .getFilteredByGlob("src/content/posts/*.md")
+      .reverse();
+  });
+
+  // ============================================
+  // Passthrough Copies
+  // ============================================
+  eleventyConfig.addPassthroughCopy({ "src/cp": "./" });
+  eleventyConfig.addPassthroughCopy("src/img");
+  eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addPassthroughCopy("src/logo");
+
+  // ============================================
+  // Shortcodes
+  // ============================================
+  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
   // Enable AMP tags in markdown
   let markdownIt = require('markdown-it');
@@ -28,32 +50,17 @@ module.exports = function (eleventyConfig) {
     linkify: true,
   };
   eleventyConfig.setLibrary('md', markdownIt(options));
-  //filters
-
-  //shortcodes
-  /*
-  //mermaidamp (mermaid svg wrapped in ampimg) 
-  eleventyConfig.addPairedShortcode("mermaidamp", function(content, alt = "Diagram") {
-    // Generate a hash from content to avoid filename collisions
-    const hash = require("crypto").createHash("md5").update(content.trim()).digest("hex").slice(0, 8);
-    const svgPath = `/assets/mermaid/${hash}.svg`;
-  
-    // Use your existing ampimg shortcode
-    return `{% ampimg src="${svgPath}" alt="${alt}" width="600" height="400" layout="responsive" %}`;
-  });
-  */
-  //collections
-
-
-  //directories and such
-  eleventyConfig.addPassthroughCopy({ "src/cp": "./" });
 
   return {
     dir: {
       input: "src",
-      includes: "_includes",
+      output: "_site",
       data: "_data",
-      output: "_site"
+      includes: "_includes"
+      //layouts: "_includes/layouts"
     },
+    templateFormats: ["md", "liquid", "njk", "html"],
+    htmlTemplateEngine: "liquid",
+    markdownTemplateEngine: "liquid"
   };
 };

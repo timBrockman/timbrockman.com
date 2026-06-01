@@ -1,0 +1,47 @@
+{% comment %}
+  Reusable Project Card Component
+  Preserves the signature triangular clip-path design.
+
+  Usage:
+    {% include "components/project-card.liquid", project: project %}
+{% endcomment %}
+
+<article class="project-card triangle-clip">
+  <div class="project-card__header">
+    <h3 class="project-card__title">{{ project.data.title }}</h3>
+    {% if project.data.role %}
+      <p class="project-card__role">{{ project.data.role }}</p>
+    {% endif %}
+  </div>
+
+  {% if project.data.image %}
+    <div class="project-card__image">
+      <img 
+        src="{{ project.data.image }}" 
+        alt="{{ project.data.imageAlt | default: project.data.title }}"
+        loading="lazy"
+      >
+    </div>
+  {% endif %}
+
+  <div class="project-card__body">
+    {{ project.templateContent | strip_html | truncate: 220 }}
+  </div>
+
+  {% if project.data.technologies %}
+    <div class="project-card__tech">
+      {% for tech in project.data.technologies %}
+        <span class="tech-pill">{{ tech }}</span>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <div class="project-card__footer">
+    {% if project.data.github %}
+      <a href="{{ project.data.github }}" class="button button--ghost" target="_blank" rel="noopener">View on GitHub</a>
+    {% endif %}
+    {% if project.url %}
+      <a href="{{ project.url }}" class="button button--primary">View Details →</a>
+    {% endif %}
+  </div>
+</article>
