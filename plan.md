@@ -45,3 +45,40 @@ The live site at https://timbrockman.com remains largely unchanged: Hero and con
 ---
 
 **End of Updated Plan**
+
+## Session Refactor Plan
+
+6/11/2026
+
+This session will focus on the AMP layout and CSS refactor for the new card-based theme.
+
+### Phases
+1. Layout and structure refactor
+2. CSS theme consolidation
+3. Motion and interaction polish
+4. AMP validation and cleanup
+
+### Work items
+- Audit live templates:
+  - `src/_includes/layouts/default.liquid`
+  - `src/_includes/layouts/list.liquid`
+  - `src/_includes/layouts/profile.liquid`
+  - `src/_includes/snippets/header/id-header.liquid`
+  - `src/_includes/snippets/header/page-header.liquid`
+  - `src/_includes/snippets/footer/footer.liquid`
+  - `src/_includes/snippets/sidebar/amp-sidebar.liquid`
+  - `src/_includes/snippets/meta/amp-custom-style.liquid`
+- Convert hard-coded project sections into reusable card components:
+  - `src/_includes/components/project-card.liquid`
+  - optionally `src/_includes/components/project-grid.liquid`
+- Refresh the hero and page structure with a split layout and clipped preview imagery.
+- Consolidate AMP-safe styles into `amp-custom-style.liquid`.
+- Add subtle terminal-inspired hover/focus interactions and motion, while respecting AMP and `prefers-reduced-motion`.
+- Validate with `npm run build` and an AMP validator.
+
+### Verification
+- build output looks correct in `_site`
+- all `amp-img` tags have explicit `width`, `height`, and `layout="responsive"`
+- AMP validator passes
+- responsive card layout and hover interactions work
+- clip-path motif is preserved across hero, cards, and preview elements

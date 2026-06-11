@@ -54,6 +54,8 @@ This approach balances distinctiveness with professional credibility — especia
 ├── src/
 │   ├── _includes/          # Layouts & reusable snippets (Liquid)
 │   ├── content/            # Markdown pages & posts
+│   │   ├── projects/       # Project detail pages and project previews
+│   │   └── posts/          # Blog posts, notes, and technical writeups
 │   ├── _data/              # Site metadata
 │   ├── cp/                 # Static assets copied to root
 │   └── img/                # Images & optimized assets
@@ -62,6 +64,40 @@ This approach balances distinctiveness with professional credibility — especia
 ├── plan.md                 # Detailed refactor plan
 └── README.md
 ```
+
+### Content model
+
+- `src/index.md` remains the homepage profile page.
+- `src/articles.md` and `src/projects.md` are list pages rendered with `layouts/list.liquid`.
+- `src/content/projects/*.md` are project detail pages.
+- `src/content/posts/*.md` are blog posts, notes, and technical writeups.
+
+Each page should include the following front matter when using `layouts/default.liquid` or `layouts/list.liquid`:
+
+```yaml
+title: "Page Title"
+subtitle: "Page subtitle or short descriptor"
+imagePrefix: "hero-image-key"
+imageAlt: "Accessible alt text for preview image"
+stub: "Short summary or card excerpt"
+footerLink: "https://example.com"
+footerText: "Action label"
+```
+
+List pages also use:
+
+```yaml
+listType: "projects"   # or "posts"
+permalink: "/projects/" # or "/articles/"
+```
+
+Site metadata in `src/_data/site.json` powers the shared shell and layout behavior:
+
+- `site.navigation` controls sidebar links.
+- `site.heroActions` drives CTA buttons in the hero.
+- `site.footer` provides copyright and contact links.
+
+This model powers the shared header, hero CTAs, and card-based previews across the site.
 
 ## Getting Started
 
@@ -98,9 +134,13 @@ We use a **hybrid human + AI-assisted** workflow:
 2. **Implementation** (inside GitHub)
    - Use GitHub Codespaces + GitHub Copilot for layouts, components, and CSS
    - Quick Markdown updates via GitHub Mobile app
-3. **Diagrams**
+3. **Content authoring**
+   - Project pages live in `src/content/projects/`
+   - Posts and technical notes live in `src/content/posts/`
+   - Each page should include the shared metadata fields listed above
+4. **Diagrams**
    - Prefer build-time rendered SVG (via Mermaid CLI) wrapped with the existing `ampimg` shortcode
-4. **Review & Deploy**
+5. **Review & Deploy**
    - Push to `master` → GitHub Actions builds and deploys to GitHub Pages
 
 See [plan.md](https://github.com/timBrockman/timbrockman.com/blob/master/plan.md) for the full phased roadmap.
