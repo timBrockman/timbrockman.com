@@ -1,5 +1,5 @@
-    <header id="idHeader">
-			<div id="idBlock">
+    <header id="idHeader" class="hero">
+			<div id="idBlock" class="hero-copy">
 				<div id="profilePicture">
           <amp-img src="/images/{{site.id.imagePrefix}}-310_profile.{{site.id.imageExtension}}" alt="{{site.id.imageAlt}}"
             srcset="/images/{{site.id.imagePrefix}}-310_profile.{{site.id.imageExtension}} 1024w, images/{{site.id.imagePrefix}}-236_profile.{{site.id.imageExtension}} 768w, images/{{site.id.imagePrefix}}-160_profile.{{site.id.imageExtension}} 320w"
@@ -11,10 +11,15 @@
           <h5 class="pad pointer" on="tap:sidebar.toggle" role="switch" tabindex="default">&equiv;
           </h5>
 					<h1 class="lowCeiling pad right">{{site.id.title}}</h1>
-					<h6 class="pad">{{site.id.subtitle}}</h6>
-				</div>
+					<h6 class="pad">{{site.id.subtitle}}</h6>					{% if site.heroActions %}
+					  <div class="hero-actions">
+					    {% for action in site.heroActions %}
+					      <a class="button button--primary" href="{{ action.0 }}">{{ action.1 }}</a>
+					    {% endfor %}
+					  </div>
+					{% endif %}				</div>
 			</div>
-			<div id="socList">
+			<aside id="socList">
 				<div id="socSpace"></div>
 				<h1>@</h1>
 				<p>
@@ -22,5 +27,5 @@
 					<a href="{{link.0}}" target="_blank">{{link.1}}</a><br>
 {% endfor %}
 				</p>
-			</div>
+			</aside>
 		</header>
