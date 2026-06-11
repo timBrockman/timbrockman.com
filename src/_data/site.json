@@ -16,6 +16,15 @@
       ["https://LinkedIn.com/in/timbrockman", "LinkedIn.com/in/timbrockman"]
     ]
   },
+  "navigation":[
+    ["/", "profile"],
+    ["/articles/", "articles"],
+    ["/projects/", "projects"]
+  ],
+  "heroActions":[
+    ["/dl/dev-res.pdf", "Resume"],
+    ["mailto:Tim@TimBrockman.com", "Contact"]
+  ],
   "footer":{
     "content":"&copy; 2016-2026 Tim Brockman",
     "links":[
