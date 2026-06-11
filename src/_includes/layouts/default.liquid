@@ -5,16 +5,18 @@
 <body>
   {% include 'snippets/sidebar/amp-sidebar.liquid' %}
 
-  <div class="site-wrapper">
-    {% include 'snippets/header/id-header.liquid' %}
-    {% include 'snippets/header/page-header.liquid' %}
+  <div class="site-shell">
+    <div class="site-wrapper">
+      {% include 'snippets/header/id-header.liquid' %}
+      {% include 'snippets/header/page-header.liquid' %}
 
-    <!-- Main Content -->
-    <main class="main-content triangle-clip">
-      {% include 'snippets/body/single-page.liquid' %}
-    </main>
+      <!-- Main Content -->
+      <main class="main-content">
+        {% include 'snippets/body/single-page.liquid' %}
+      </main>
 
-    {% include 'snippets/footer/footer.liquid' %}
+      {% include 'snippets/footer/footer.liquid' %}
+    </div>
   </div>
 
   {% include 'snippets/body/analytics.liquid' %}
