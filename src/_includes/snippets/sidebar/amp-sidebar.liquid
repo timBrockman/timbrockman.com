@@ -6,6 +6,12 @@
         </svg>
       </div>
       <nav class="navcolumn">
-{% include 'snippets/sidebar/nav-list.liquid' %}
+        {% if site.navigation %}
+          {% for item in site.navigation %}
+            <a href="{{ item.0 }}">{{ item.1 }}</a>
+          {% endfor %}
+        {% else %}
+          {% include 'snippets/sidebar/nav-list.liquid' %}
+        {% endif %}
       </nav>
     </amp-sidebar>
