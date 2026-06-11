@@ -1,31 +1,40 @@
 {% comment %}
-  Reusable Project Card Component
+  Reusable List Card Component
   Preserves the signature triangular clip-path design.
 
   Usage:
     {% include "components/project-card.liquid", project: project %}
 {% endcomment %}
 
-<article class="project-card triangle-clip">
+<article class="project-card preview-clip">
   <div class="project-card__header">
     <h3 class="project-card__title">{{ project.data.title }}</h3>
-    {% if project.data.role %}
-      <p class="project-card__role">{{ project.data.role }}</p>
+    {% if project.data.subtitle %}
+      <p class="project-card__role">{{ project.data.subtitle }}</p>
     {% endif %}
   </div>
 
+  {% assign imageAltText = project.data.imageAlt | default: project.data.title %}
   {% if project.data.image %}
+    {% assign imageSrc = project.data.image %}
+  {% elsif project.data.imagePrefix %}
+    {% assign imageSrc = "/images/" | append: project.data.imagePrefix | append: "-465_project.png" %}
+  {% endif %}
+
+  {% if imageSrc %}
     <div class="project-card__image">
-      <img 
-        src="{{ project.data.image }}" 
-        alt="{{ project.data.imageAlt | default: project.data.title }}"
-        loading="lazy"
-      >
+      <amp-img
+        src="{{ imageSrc }}"
+        alt="{{ imageAltText }}"
+        srcset="{{ imageSrc }} 1024w, /images/{{ project.data.imagePrefix }}-354_project.png 768w, /images/{{ project.data.imagePrefix }}-240_project.png 320w"
+        width="100"
+        height="100"
+        layout="responsive"></amp-img>
     </div>
   {% endif %}
 
   <div class="project-card__body">
-    {{ project.templateContent | strip_html | truncate: 220 }}
+    <p>{{ project.data.stub | default: project.templateContent | strip_html | truncate: 220 }}</p>
   </div>
 
   {% if project.data.technologies %}
@@ -41,7 +50,9 @@
       <a href="{{ project.data.github }}" class="button button--ghost" target="_blank" rel="noopener">View on GitHub</a>
     {% endif %}
     {% if project.url %}
-      <a href="{{ project.url }}" class="button button--primary">View Details →</a>
+      <a href="{{ project.url }}" class="button button--primary">
+        {% if project.data.github %}View details →{% else %}Read more →{% endif %}
+      </a>
     {% endif %}
   </div>
 </article>
