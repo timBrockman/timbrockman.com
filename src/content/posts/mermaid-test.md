@@ -1,7 +1,20 @@
 ---
 layout: layouts/default.liquid
 draft: false
+tags:
+  - posts
+  - tests
+  - amp
+  - eleventy
+  - shortcodes
+date: 2025-11-10
 title: Layout & Shortcode Testing
+subtitle: Comprehensive testing for Eleventy plugins and AMP components
+imagePrefix: "mermaid-test"
+imageAlt: "Layout and shortcode testing page"
+stub: "A technical test page for AMP components, shortcodes, and Markdown behavior."
+footerLink: "https://github.com/timBrockman/timbrockman.com"
+footerText: "View repository"
 description: Comprehensive testing page for Eleventy plugins and AMP components
 ---
 
