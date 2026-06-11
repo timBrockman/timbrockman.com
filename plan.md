@@ -1,7 +1,7 @@
 # timbrockman.com Site Refactor Plan
 
-**Version:** 1.1 (Updated June 10, 2026)  
-**Date:** June 10, 2026  
+**Version:** 1.2 (Updated June 11, 2026)  
+**Date:** June 11, 2026  
 **Status:** Active / In Progress  
 **Goal:** Transform timbrockman.com from a dated digital resume into a credible, scannable, and distinctive professional platform that effectively supports opportunities in Generative AI, ServiceNow/GovTech, and full-stack systems engineering.
 
@@ -9,76 +9,93 @@ This plan is grounded in research of top developer portfolio sites, recruiter an
 
 ## Current Site Status
 
-The live site at https://timbrockman.com remains largely unchanged: Hero and content still lean on older Katmai-focused positioning. Technical foundation (11ty) is intact, but lacks updated projects, strong scannability, and full hybrid design elements. Repo plan.md was recently touched.
+The live site at https://timbrockman.com is still running the older baseline design. The `layout-refactor` branch now contains the major structural updates: data-driven navigation, a reusable project card component, card-based list pages at `/articles/` and `/projects/`, hero CTA metadata, shared layout shells, and a modern AMP-ready style layer. A local Eleventy build succeeds, but the branch changes are not yet merged or deployed to production.
 
 ## Punchlist Matrix & Progress (Single Source for Iterative Development)
 
 | Item | Status (Done/Partial/To-Do) | Phase | Strategy Fit & Notes | Priority | Owner/Next |
 |------|-----------------------------|-------|----------------------|----------|------------|
-| Core narrative update (Deloitte + TalentForge lead) | To-Do (stale on live site) | 0 | Aligns with "show current value in <8s" goal; foundational for credibility | Highest | Human/Grok draft |
-| Hero + Value Prop refresh | To-Do | 0/1 | Critical first impression; hybrid prompt-style possible | Highest | Copilot-assisted |
-| TalentForge project card (impact story) | To-Do | 1 | Flagship "show don't tell"; drives GenAI positioning | Highest | Create MD + card component |
-| Other projects (3-6 total) + triangular clips | Partial (assets exist) | 1 | Retains signature design; enhances scannability | High | Project cards in src/content |
-| Collections in .eleventy.js (projects/posts) | To-Do | 1 | Enables structured content; leverages 11ty strengths | High | Config update |
-| About section reframe (Katmai as foundation) | To-Do | 0/3 | Builds "why me" narrative without losing history | High | Content migration |
-| Hybrid CSS (terminal accents + clips + glow) | To-Do | 2 | Distinctive yet professional; balances retro appeal vs. credibility trade-off | High | Layouts + styles |
-| Curated posts from Content Hub | Partial (assets available) | 3 | Thought leadership/SEO; frame as systems expertise | Medium-High | Select + migrate 5-8 |
-| CTAs (resume, contact) | Partial/Basic | 1 | Reduces friction for opportunities | High | Prominent buttons |
-| Diagrams/Mermaid build-time | To-Do | 2 | Technical depth without AMP breakage | Medium | SVG + ampimg |
-| Lighthouse/AMP/performance | Good foundation | 4 | Signals engineering quality | High | Testing |
-| Overall deployment workflow | Functional (GH Actions) | 4 | Sustainable iteration for agents/Copilot | Medium | Polish + docs |
+| Core narrative update (Deloitte + TalentForge lead) | Partial | 0 | Homepage content now reflects Deloitte/GenAI positioning, but narrative polish is ongoing | Highest | Refine content and merge |
+| Hero + Value Prop refresh | Done | 0/1 | New hero CTA support and responsive header structure are implemented in branch | Highest | Validate UX across breakpoints |
+| TalentForge project card (impact story) | Partial | 1 | List/page framework is built, but a dedicated TalentForge case study page is still pending | Highest | Create focused project markdown |
+| Other projects (3-6 total) + triangular clips | Partial | 1 | Existing project pages moved into `src/content/projects/` and card previews are wired | High | Add remaining content and review visuals |
+| Collections in .eleventy.js (projects/posts/learning) | Done | 1 | `projects`, `posts`, and `learning` collections are configured | High | Verify collection outputs in templates |
+| About section reframe (Katmai as foundation) | Partial | 0/3 | Homepage framing is updated, but the biography and historical narrative need review | High | Refine messaging and timeline |
+| Hybrid CSS (terminal accents + clips + glow) | Done | 2 | New AMP-friendly `amp-custom-style-modern.liquid` and theme foundation are in place | High | Continue visual polish and maintain accessibility |
+| Curated posts from Content Hub | Partial | 3 | Post content moved into `src/content/posts/`; more editorial curation remains | Medium-High | Publish selected notes and essays |
+| CTAs (resume, contact) | Done | 1 | Call-to-action buttons are now driven from `site.heroActions` | High | Confirm canonical target behavior |
+| Diagrams/Mermaid build-time | To-Do | 2 | AMP-safe diagram workflow has not yet been fully implemented | Medium | Add Mermaid/SVG tooling once core layout stabilizes |
+| Lighthouse/AMP/performance | Partial | 4 | Local build passes with non-fatal AMP optimizer warnings; further validation is required | High | Run AMP validator and fix any issues |
+| Overall deployment workflow | Partial | 4 | GitHub Pages pipeline exists, but the branch still needs merge and release | Medium | Prepare PR and deployment checks |
 
-**Strategy Alignment:** Prioritize high-impact, low-risk quick wins (Phase 0/1) before deeper refactors. Trade-offs: Full redesign risks scope creep (mitigated by phasing); content-first avoids code churn. Maintain 11ty strengths + triangular clips + subtle terminal without breaking performance.
+**Strategy Alignment:** Continue the phase-based rollout. Finish the current refactor before adding new visual or content experiments. Keep the design distinctive yet professional by focusing on structured content, AMP compatibility, and lightweight interactions.
 
-**Alternatives Evaluated:** Full terminal redesign (risk: credibility) vs. clean-only (misses personality). Phased matrix for agent parsability.
-
-[Rest of original plan content preserved below for continuity...]
+**Alternatives Evaluated:** Full terminal redesign (risk: credibility) vs. content-first hybrid (preferred). Current work preserves the clip-path motif while moving the site toward a cleaner, more maintainable architecture.
 
 ## 1. Executive Summary & Strategic Direction
 
-[Original content from previous version...]
+The `layout-refactor` branch has moved the site from legacy resume scaffolding to a structured portfolio platform. The branch now includes the primary architecture and style work necessary to support a modern portfolio experience.
 
-## ... (full original sections maintained with matrix integrated above)
+Key branch achievements:
+- Shared site shell layout with `site-shell` and `site-wrapper`
+- Data-driven sidebar navigation and hero CTA metadata
+- Reusable project card component and list-driven content rendering
+- Dedicated list pages at `/articles/` and `/projects/`
+- AMP-ready styling through `amp-custom-style-modern.liquid`
+- Eleventy collections for `projects`, `posts`, and `learning`
+- Local Eleventy build success with new branch assets
 
-**This plan.md serves as the living single source of truth for GitHub Copilot and other agents to iteratively develop the site.**
+This plan now shifts from pure layout refactor to validation, content refinement, and merge preparedness.
 
----
+## 2. Current Priorities
 
-**End of Updated Plan**
+- Finalize content migration and add a dedicated TalentForge/GenAI case study page
+- Verify list page rendering and collection outputs for `/articles/` and `/projects/`
+- Complete AMP validation and address any warnings or accessibility gaps
+- Prepare the branch for merge into `master`
+- Maintain the distinctive visual language while keeping the site professional and accessible
 
 ## Session Refactor Plan
 
 6/11/2026
 
-This session will focus on the AMP layout and CSS refactor for the new card-based theme.
+The current session is focused on branch stabilization, validation, and content readiness for merge.
 
 ### Phases
-1. Layout and structure refactor
-2. CSS theme consolidation
-3. Motion and interaction polish
-4. AMP validation and cleanup
+1. Layout/collection/style refactor — Completed
+2. Content migration and editorial polish — In progress
+3. Validation and accessibility review — Next
+4. Merge readiness and deployment checks — Next
 
 ### Work items
-- Audit live templates:
+- Confirm the updated site scaffold:
   - `src/_includes/layouts/default.liquid`
   - `src/_includes/layouts/list.liquid`
   - `src/_includes/layouts/profile.liquid`
+- Verify shared header and hero CTA behavior:
   - `src/_includes/snippets/header/id-header.liquid`
   - `src/_includes/snippets/header/page-header.liquid`
-  - `src/_includes/snippets/footer/footer.liquid`
-  - `src/_includes/snippets/sidebar/amp-sidebar.liquid`
-  - `src/_includes/snippets/meta/amp-custom-style.liquid`
-- Convert hard-coded project sections into reusable card components:
+- Validate reusable content components and collection rendering:
   - `src/_includes/components/project-card.liquid`
-  - optionally `src/_includes/components/project-grid.liquid`
-- Refresh the hero and page structure with a split layout and clipped preview imagery.
-- Consolidate AMP-safe styles into `amp-custom-style.liquid`.
-- Add subtle terminal-inspired hover/focus interactions and motion, while respecting AMP and `prefers-reduced-motion`.
-- Validate with `npm run build` and an AMP validator.
+  - `src/_data/site.json`
+- Review and validate the AMP style layer:
+  - `src/_includes/snippets/meta/amp-head.liquid`
+  - `src/_includes/snippets/meta/amp-custom-style-modern.liquid`
+- Confirm sidebar navigation is data-driven with fallback behavior:
+  - `src/_includes/snippets/sidebar/amp-sidebar.liquid`
+- Validate content structure and routing:
+  - `src/articles.md`
+  - `src/projects.md`
+  - `src/content/posts/*.md`
+  - `src/content/projects/*.md`
+- Prepare the branch for merge and deployment
+- Address any remaining AMP and accessibility issues
 
 ### Verification
-- build output looks correct in `_site`
-- all `amp-img` tags have explicit `width`, `height`, and `layout="responsive"`
-- AMP validator passes
-- responsive card layout and hover interactions work
-- clip-path motif is preserved across hero, cards, and preview elements
+- `npm run build` completes successfully with the new layout and list pages
+- `/articles/` and `/projects/` render correctly from list pages
+- hero CTA buttons render from `site.heroActions`
+- AMP head uses modern fonts and the new style include
+- project/post collections render correctly in the list layout
+- no duplicate or outdated plan sections remain in this document
+- branch is ready for merge with clear content and layout separation
