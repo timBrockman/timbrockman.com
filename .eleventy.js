@@ -29,6 +29,12 @@ module.exports = function(eleventyConfig) {
       .reverse();
   });
 
+  eleventyConfig.addCollection("learning", function(collectionApi) {
+    return collectionApi
+      .getFilteredByGlob("src/content/learning/*.md")
+      .reverse();
+  });
+
   // ============================================
   // Passthrough Copies
   // ============================================
