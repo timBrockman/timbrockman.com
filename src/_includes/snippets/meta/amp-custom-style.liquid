@@ -164,106 +164,6 @@ section:not([expanded]) .showless{
 body{
   font-size: 1.6rem;
 }
-@media (min-width:768px){
-  html{
-    font-size:93.75%;/* 1rem = 15px (kind of yuck, but ends up being 8->12px, 16->24px)*/
-    --triangle: 236px;/* h1 + p + 2px = 64px + 170px + 2px = 236px*/
-  }
-  #sidebar{
-    width: 50vw;
-  }
-  body{
-    font-size: 1.2rem;/*(18px)*/
-  }
-  .projectThumb{
-    max-height: 354px;
-    -webkit-clip-path: polygon(251px 0px, 100% 0px, 100% 354px, 15px 354px, 15px 236px, 251px 0px);
-    clip-path: polygon(251px 0px, 100% 0px, 100% 354px, 15px 354px, 15px 236px, 251px 0px);
-    -webkit-shape-outside: polygon(236px 0px, 100% 0px, 100% 354px, 0px 354px, 0px 236px, 236px 0px);
-    shape-outside: polygon(236px 0px, 100% 0px, 100% 354px, 0px 354px, 0px 236px, 236px 0px);
-  }
-  .thumbBorder{
-    -webkit-clip-path: polygon(251px 0px, 100% 0px, 100% 100%, 15px 100%, 15px 236px, 251px 0px);
-    clip-path: polygon(251px 0px, 100% 0px, 100% 100%, 15px 100%, 15px 236px, 251px 0px);
-
-    -webkit-shape-outside: polygon(236px 0px, 100% 0px, 100% 378px, 0px 378px, 0px 236px, 236px 0px);
-    shape-outside: polygon(236px 0px, 100% 0px, 100% 378px, 0px 378px, 0px 236px, 236px 0px);
-  }
-  .banner{
-    max-height: 236px;
-    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 177px, 33% 177px, calc(33% - 59px)  100%, 0%   100%, 0% 0%);
-    clip-path:polygon(0% 0%, 100% 0%, 100% 177px, 33% 177px, calc(33% - 59px)  100%, 0%   100%, 0% 0%);
-  }
-  .bannerWrap{
-    height: 236px;
-    -webkit-shape-outside: polygon(0% 0%, 100% 0%, 100% 177px, 33% 177px, calc(33% - 59px)  100%, 0%   100%, 0% 0%);
-    shape-outside:  polygon(0% 0%, 100% 0%, 100% 177px, 33% 177px, calc(33% - 59px)  100%, 0%   100%, 0% 0%);
-  }
-}
-@media (min-width:1024px){
-  html{
-    font-size:125%;/* 1rem = 20px (kind of mvp lazy, but ends up being 8->16px, 16->32px)*/
-    --triangle: 310px; /* h1 + p + 2px = 84px + 224px + 2px = 310px */
-  }
-  body{
-    font-size: 1rem;/*(20px)*/
-  }
-  .projectThumb{
-    max-height: 465px;
-    -webkit-clip-path: polygon(330px 0px, 100% 0, 100% 465px, 20px 465px, 20px 310px, 330px 0px);
-    clip-path: polygon(330px 0px, 100% 0, 100% 465px, 20px 465px, 20px 310px, 330px 0px);
-    -webkit-shape-outside: polygon(310px 0px, 100% 0, 100% 465px, 0px 465px, 0px 310px, 310px 0px);
-    shape-outside: polygon(310px 0px, 100% 0, 100% 465px, 0px 465px, 0px 310px, 310px 0px);
-  }
-  .thumbBorder{
-    -webkit-clip-path: polygon(330px 0px, 100% 0, 100% 100%, 20px 100%, 20px 310px, 330px 0px);
-    clip-path: polygon(330px 0px, 100% 0, 100% 100%, 20px 100%, 20px 310px, 330px 0px);
-
-    -webkit-shape-outside: polygon(310px 0px, 100% 0, 100% 497px, 0px 497px, 0px 310px, 310px 0px);
-    shape-outside: polygon(310px 0px, 100% 0, 100% 497px, 0px 497px, 0px 310px, 310px 0px);
-  }
-  .banner{
-    max-height: 312px;
-    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 234px, 33% 234px, calc(33% - 78px)  100%, 0%   100%, 0% 0%);
-    clip-path:polygon(0% 0%, 100% 0%, 100% 234px, 33% 234px, calc(33% - 78px)  100%, 0%   100%, 0% 0%);
-  }
-  .bannerWrap{
-    height: 312px;
-    -webkit-shape-outside: polygon(0% 0%, 100% 0%, 100% 234px, 33% 234px, calc(33% - 78px)  100%, 0%   100%, 0% 0%);
-    shape-outside:  polygon(0% 0%, 100% 0%, 100% 234px, 33% 234px, calc(33% - 78px)  100%, 0%   100%, 0% 0%);
-  }
-
-  /* 1. Prevent the hamburger button/toggle from showing on desktop */
-  .hamburger-menu-toggle {
-    display: none;
-  }
-
-  /* 2. Create the split view layout on the body or container wrapper */
-  body {
-    display: flex;
-    min-height: 100vh;
-  }
-
-  /* 3. Style the persistent side menu container */
-  #desktop-sidebar-target {
-    flex-grow:1;
-    flex-basis:0;
-    display: block;
-    position: sticky;
-    top: 0;
-    width: 300px;      /* Set your desired sidebar width */
-    height: 100vh;     /* Full viewport height */
-    padding: 0;
-  }
-
-  /* 4. Ensure main content takes up the remaining space */
-  .site-wrapper {
-    flex-grow: 2;
-    flex-basis:0;
-    padding: 0;
-  }
-}
-
 body{
   background-color: var(--bg-color);
 
@@ -487,6 +387,106 @@ footer{
 #socSpace{
   display: none;
 }
+@media (min-width:768px){
+  html{
+    font-size:93.75%;/* 1rem = 15px (kind of yuck, but ends up being 8->12px, 16->24px)*/
+    --triangle: 236px;/* h1 + p + 2px = 64px + 170px + 2px = 236px*/
+  }
+  #sidebar{
+    width: 50vw;
+  }
+  body{
+    font-size: 1.2rem;/*(18px)*/
+  }
+  .projectThumb{
+    max-height: 354px;
+    -webkit-clip-path: polygon(251px 0px, 100% 0px, 100% 354px, 15px 354px, 15px 236px, 251px 0px);
+    clip-path: polygon(251px 0px, 100% 0px, 100% 354px, 15px 354px, 15px 236px, 251px 0px);
+    -webkit-shape-outside: polygon(236px 0px, 100% 0px, 100% 354px, 0px 354px, 0px 236px, 236px 0px);
+    shape-outside: polygon(236px 0px, 100% 0px, 100% 354px, 0px 354px, 0px 236px, 236px 0px);
+  }
+  .thumbBorder{
+    -webkit-clip-path: polygon(251px 0px, 100% 0px, 100% 100%, 15px 100%, 15px 236px, 251px 0px);
+    clip-path: polygon(251px 0px, 100% 0px, 100% 100%, 15px 100%, 15px 236px, 251px 0px);
+
+    -webkit-shape-outside: polygon(236px 0px, 100% 0px, 100% 378px, 0px 378px, 0px 236px, 236px 0px);
+    shape-outside: polygon(236px 0px, 100% 0px, 100% 378px, 0px 378px, 0px 236px, 236px 0px);
+  }
+  .banner{
+    max-height: 236px;
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 177px, 33% 177px, calc(33% - 59px)  100%, 0%   100%, 0% 0%);
+    clip-path:polygon(0% 0%, 100% 0%, 100% 177px, 33% 177px, calc(33% - 59px)  100%, 0%   100%, 0% 0%);
+  }
+  .bannerWrap{
+    height: 236px;
+    -webkit-shape-outside: polygon(0% 0%, 100% 0%, 100% 177px, 33% 177px, calc(33% - 59px)  100%, 0%   100%, 0% 0%);
+    shape-outside:  polygon(0% 0%, 100% 0%, 100% 177px, 33% 177px, calc(33% - 59px)  100%, 0%   100%, 0% 0%);
+  }
+}
+@media (min-width:1024px){
+  html{
+    font-size:125%;/* 1rem = 20px (kind of mvp lazy, but ends up being 8->16px, 16->32px)*/
+    --triangle: 310px; /* h1 + p + 2px = 84px + 224px + 2px = 310px */
+  }
+  body{
+    font-size: 1rem;/*(20px)*/
+  }
+  .projectThumb{
+    max-height: 465px;
+    -webkit-clip-path: polygon(330px 0px, 100% 0, 100% 465px, 20px 465px, 20px 310px, 330px 0px);
+    clip-path: polygon(330px 0px, 100% 0, 100% 465px, 20px 465px, 20px 310px, 330px 0px);
+    -webkit-shape-outside: polygon(310px 0px, 100% 0, 100% 465px, 0px 465px, 0px 310px, 310px 0px);
+    shape-outside: polygon(310px 0px, 100% 0, 100% 465px, 0px 465px, 0px 310px, 310px 0px);
+  }
+  .thumbBorder{
+    -webkit-clip-path: polygon(330px 0px, 100% 0, 100% 100%, 20px 100%, 20px 310px, 330px 0px);
+    clip-path: polygon(330px 0px, 100% 0, 100% 100%, 20px 100%, 20px 310px, 330px 0px);
+
+    -webkit-shape-outside: polygon(310px 0px, 100% 0, 100% 497px, 0px 497px, 0px 310px, 310px 0px);
+    shape-outside: polygon(310px 0px, 100% 0, 100% 497px, 0px 497px, 0px 310px, 310px 0px);
+  }
+  .banner{
+    max-height: 312px;
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 234px, 33% 234px, calc(33% - 78px)  100%, 0%   100%, 0% 0%);
+    clip-path:polygon(0% 0%, 100% 0%, 100% 234px, 33% 234px, calc(33% - 78px)  100%, 0%   100%, 0% 0%);
+  }
+  .bannerWrap{
+    height: 312px;
+    -webkit-shape-outside: polygon(0% 0%, 100% 0%, 100% 234px, 33% 234px, calc(33% - 78px)  100%, 0%   100%, 0% 0%);
+    shape-outside:  polygon(0% 0%, 100% 0%, 100% 234px, 33% 234px, calc(33% - 78px)  100%, 0%   100%, 0% 0%);
+  }
+
+  /* 1. Prevent the hamburger button/toggle from showing on desktop */
+  #idHeader {
+    display: none;
+  }
+
+  /* 2. Create the split view layout on the body or container wrapper */
+  body {
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* 3. Style the persistent side menu container */
+  #desktop-sidebar-target {
+    flex-grow:1;
+    flex-basis:0;
+    display: block;
+    position: sticky;
+    top: 0;
+    width: 300px;      /* Set your desired sidebar width */
+    height: 100vh;     /* Full viewport height */
+    padding: 0;
+  }
+
+  /* 4. Ensure main content takes up the remaining space */
+  .site-wrapper {
+    flex-grow: 2;
+    flex-basis:0;
+    padding: 0;
+  }
+}
+
 
 @supports ((--triangle:none) and ((-webkit-clip-path:none) or (clip-path:none))){
   #profilePicture {
