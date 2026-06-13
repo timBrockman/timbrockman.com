@@ -18,15 +18,15 @@ module.exports = function(eleventyConfig) {
   // Collections
   // ============================================
   eleventyConfig.addCollection("projects", function(collectionApi) {
-    return collectionApi
-      .getFilteredByGlob("src/content/projects/*.md")
-      .sort((a, b) => (a.data.order || 99) - (b.data.order || 99));
+    const collection = collectionApi
+      .getFilteredByGlob("src/content/*.md");
+    return collection.filter(item => item.data.tags && item.data.tags.includes("projects"));
   });
 
   eleventyConfig.addCollection("posts", function(collectionApi) {
-    return collectionApi
-      .getFilteredByGlob("src/content/posts/*.md")
-      .reverse();
+    const collection = collectionApi
+      .getFilteredByGlob("src/content/*.md");
+    return collection.filter(item => item.data.tags && item.data.tags.includes("posts"));
   });
 
   // ============================================
