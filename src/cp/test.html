@@ -115,15 +115,18 @@
       box-sizing: border-box;
     }
 
-    .sidebar-content h3 {
+    #menu-heading {
       visibility: hidden;
       opacity: 0;
       transition: opacity 0.2s ease;
       margin-left: 10px;
       text-wrap: nowrap;
     }
+    #menu-heading p, #menu-heading h3 {
+      margin:5px 0px;
+    }
 
-    .sidebar-checkbox:checked ~ .persistent-sidebar .sidebar-content h3 {
+    .sidebar-checkbox:checked ~ .persistent-sidebar .sidebar-content #menu-heading {
       opacity: 1;
       visibility: visible;
     }
@@ -140,13 +143,11 @@
     }
 
     /* Make the list item a flex container to align link and extra text side-by-side */
+    #identity,
     .spy-menu li {
       display: flex;
       align-items: center;
       gap: 12px; /* Space between the anchor block and the extra elements */
-    }
-    #menu-heading {
-      display:inline-flex;
     }
 
     .spy-menu li a {
@@ -266,6 +267,99 @@
       color: #ccf;
       border-top: 1px solid rgba(0, 0, 0, 0.1);
     }
+    /* ==========================================================================
+      DOSSIER & SOCIAL ICON MATRIX (Pinned to Bottom)
+      ========================================================================== */
+
+    /* Parent layout block pinned to bottom of screen view */
+    .sidebar-dossier {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 15px 6px;
+      box-sizing: border-box;
+      
+      display: flex;
+      align-items: flex-start;
+      gap: 12px; /* Matches your master grid spacing metrics perfectly */
+      border-top: 1px solid #2a2a2e;
+      background-color: #1c1c1e;
+    }
+
+    /* Column 1: Social icon formatting track */
+    .dossier-icons {
+      display: flex;
+      flex-direction: column;
+      gap: 8px; /* Vertical padding gap between each icon box */
+      width: 48px; /* Locks right along the 27px layout line */
+      flex-shrink: 0;
+    }
+
+    .social-icon {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #8e8e93;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-family: monospace;
+      border: 1px solid #2a2a2e;
+      background-color: #111;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+
+    /* Hover style logic for icons */
+    .social-icon:hover {
+      color: #00ff66;
+      border-color: #00ff66;
+      box-shadow: 0 0 4px rgba(0, 255, 102, 0.4);
+    }
+
+    /* Column 2: Dossier Profile Card Base Layout */
+    .dossier-card {
+      display: flex;
+      flex-direction: column;
+      font-family: monospace;
+      white-space: nowrap;
+
+      /* Hiding Mechanics setup */
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-10px);
+      transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
+    }
+
+    .dossier-title {
+      font-size: 0.85rem;
+      font-weight: bold;
+      color: #0a84ff; /* Tech neon accent color blue */
+      letter-spacing: 1px;
+    }
+
+    .dossier-stats {
+      margin: 4px 0 0 0;
+      font-size: 0.75rem;
+      color: #a1a1a6;
+      line-height: 1.4;
+    }
+
+    /* Reveal the dossier card parameters only when sidebar opens */
+    .sidebar-checkbox:checked ~ .persistent-sidebar .dossier-card {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+      transition-delay: 0.1s;
+    }
+
+    /* Padding safety offset adjustment so navigation list doesn't overlap footer content */
+    .spy-menu {
+      margin-bottom: 180px; 
+    }
+
   </style>
 </head>
 <body>
@@ -283,13 +377,15 @@
       <label for="sidebar-toggle" class="toggle-btn close-btn">&lt;</label>
     </div>
     <nav class="sidebar-content">
-      <div id="menu-heading">
-        <svg id="logo" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
-            <polyline points="25,25 25,1 48,1 25,25 48,48 25,48 25,25 1,1 25,1" fill="none" stroke="#2378ab" stroke-width="1" stroke-linejoin="miter"/>
-        </svg>
+      <div id="identity">
         <div>
-          <h3 class="extra-info">Scroll-Spy Menu</h3>
-          <span class="extra-info"> tagline goes here ...</span>
+          <svg id="logo" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+              <polyline points="25,25 25,1 48,1 25,25 48,48 25,48 25,25 1,1 25,1" fill="none" stroke="#2378ab" stroke-width="1" stroke-linejoin="miter"/>
+          </svg>
+        </div>
+        <div id="menu-heading">
+          <h3>Scroll-Spy Menu</h3>
+          <p> tagline goes here ...</p>
         </div>
       </div>
       <!-- The scroll-target-group container -->
@@ -300,6 +396,31 @@
         <li><a href="#section-4">DOX</a><span class="extra-info ascii-bar">██████ ██████ ██████ ██████</span></li>
       </ul>
     </nav>
+
+    <div class="sidebar-dossier-mid">
+      <div class="dossier-logo-spacer">🪪</div>
+      <div class="dossier-card">
+        <span class="dossier-title">USER_DOSSIER</span>
+        <p class="dossier-stats">
+          ID: 0x8F92A<br>
+          STATUS: ONLINE<br>
+          CLASS: DEV_OPS<br>
+          SKILL: FULL_STACK
+        </p>
+      </div>
+    </div>
+
+    <footer class="sidebar-dossier">
+    <!-- Column 1: Vertical Stack of 4 Social Icons (Persistent) -->
+    <ul class="dossier-icons">
+      <li><a href="https://github.com/timBrockman" class="social-icon" title="GitHub">🖳</a><a href="https://github.com/timBrockman" class="directory-address" title="GitHub">https://github.com/timBrockman</a></li>
+      <li><a href="https://x.com/TimBrockman" class="social-icon" title="X">X</a><a href="https://x.com/TimBrockman" class="directory-address" title="X">https://x.com/TimBrockman</a></li>
+      <li><a href="https://www.linkedin.com/in/timbrockman/" class="social-icon" title="LinkedIn">◈</a><a href="https://www.linkedin.com/in/timbrockman/" class="directory-address" title="LinkedIn">https://linkedin.com/in/timbrockman</a></li>
+      <li><a href="https://huggingface.co/TimBrockman" class="social-icon" title="Hugging Face">☻</a><a href="https://huggingface.co/TimBrockman" class="directory-address" title="Hugging Face">https://huggingface.co/TimBrockman</a></li>
+      <li><a href="mailto:tim@timbrockman.com" class="social-icon" title="Email">✉</a><a href="mailto:tim@timbrockman.com" class="directory-address" title="Email">tim@timbrockman.com</a></li>
+    </ul>
+
+  </footer>
   </aside>
 
   <!-- Scroll Container Elements -->
