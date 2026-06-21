@@ -10,7 +10,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Bruno+Ace&family=Doto:wght@100..900&family=Economica:ital,wght@0,400;0,700;1,400;1,700&family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&family=Iceberg&family=Italiana&family=Michroma&family=Mr+De+Haviland&family=Nova+Flat&family=Nova+Round&family=Nova+Square&family=Orbitron:wght@400..900&family=Tulpen+One&family=VT323&family=Workbench&display=swap" rel="stylesheet">
 
  <style>
-    /* Reset & Native CSS Smooth Scroll */
     html {
       scroll-behavior: smooth;
     }
@@ -25,23 +24,21 @@
     nav, header, footer, h1, h2, h3, h4, h5, h6 {
       font-family: doto;
       color:#ccf;
-    } 
+    }
 
-    /* 1. Hide the functional checkbox controller */
     .sidebar-checkbox {
       position: fixed;
       opacity: 0;
       pointer-events: none;
     }
 
-    /* 2. Base Sidebar Setup (Collapsed State) */
     .persistent-sidebar {
       position: fixed;
       top: 0;
       left: 0;
       height: 100vh;
       width: 48px;
-      background-color: #1c1c1e;
+      background-color: rgba(0, 0, 0, 0.1);
       color: #eaeaea;
       z-index: 1000;
       box-sizing: border-box;
@@ -49,11 +46,11 @@
       transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     }
 
-    /* 3. Header and Toggle Button Setup */
     .sidebar-header {
       display: flex;
       justify-content: flex-end;
       padding: 12px 6px;
+      background:black;
     }
 
     .toggle-btn {
@@ -70,7 +67,6 @@
     .close-btn { display: none; }
     .open-btn { display: block; }
 
-    /* 4. Background Overlay Setup */
     .sidebar-overlay {
       position: fixed;
       top: 0;
@@ -84,7 +80,6 @@
       transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     }
 
-    /* 5. ACTIVE STATE MODIFIERS (When Checkbox is Checked) */
     .sidebar-checkbox:checked ~ .persistent-sidebar {
       width: 320px;
     }
@@ -105,11 +100,10 @@
     }
     @media (min-width: 992px) {
       .sidebar-checkbox:checked ~ .main-container {
-        margin-left: 320px; /* Fluidly pushes content so the sidebar covers absolutely nothing */
+        margin-left: 320px;
       }
     }
 
-    /* 6. Sidebar inner layout prevention */
     .sidebar-content {
       padding: 0;
       box-sizing: border-box;
@@ -131,29 +125,26 @@
       visibility: visible;
     }
 
-    /* ==========================================================================
-       SCROLL-SPY ENGINE (scroll-target-group)
-       ========================================================================== */
     .spy-menu {
       list-style-type: none;
-      padding: 0;
+      padding: 15px 5px 7px 5px;
       margin: 20px 0 0 0;
-      /* Tells browser to treat child <a> tags as trackable viewport targets */
       scroll-target-group: auto;
+      background: #1c1c1e;
     }
 
-    /* Make the list item a flex container to align link and extra text side-by-side */
     #identity,
     .spy-menu li {
       display: flex;
       align-items: center;
-      gap: 12px; /* Space between the anchor block and the extra elements */
+      gap: 12px;
+      margin-bottom:8px;
     }
 
     .spy-menu li a {
       font-size: .8rem;
-      width: 46px; /* Matches default collapsed look */
-      flex-shrink: 0; /* Prevents text from smashing layout elements */
+      width: 36px;
+      flex-shrink: 0;
       position: relative;
       color: #aac;
       text-decoration: none;
@@ -170,9 +161,6 @@
       border-bottom: 0px;
     }
 
-    /* ==========================================================================
-       ASCII BAR CHART ENGINE & MASKS
-       ========================================================================== */
     .spy-menu .ascii-bar {
       display: inline-block;
       font-family: monospace;
@@ -180,29 +168,23 @@
       letter-spacing: -1px;
       white-space: nowrap;
       padding-left: 9px;
-      /* Modern text-masking setup */
       background: linear-gradient(to right, #0a84ff 50%, #2a2a2e 50%);
       background-size: 200% 100%;
-      background-position: 100% 0; /* Shows dark grey side by default */
+      background-position: 100% 0;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       color:transparent;
-
-      /* Initial hidden states for when sidebar is collapsed */
       opacity: 0;
       visibility: hidden;
       transform: translateX(-10px);
-
-      /* Smoothly handles opening fade-in and the fill positioning */
-      transition: 
-        opacity 0.4s ease, 
-        visibility 0.4s ease, 
-        transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+      transition:
+        opacity 0.4s ease,
+        visibility 0.4s ease,
+        transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
         background-position 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* Reveal the bars cleanly when the sidebar is open */
     .sidebar-checkbox:checked ~ .persistent-sidebar .ascii-bar {
       opacity: 1;
       visibility: visible;
@@ -210,28 +192,22 @@
       transition-delay: 0.1s;
     }
 
-    /* ==========================================================================
-       ACTIVE SCROLL-SPY STATE & ANIMATIONS
-       ========================================================================== */
     .spy-menu li a:target-current {
       color: #0a84ff;
       background-color: rgba(10, 132, 255, 0.08);
       border-style: inset;
     }
 
-    /* Target the .ascii-bar next to the active scroll link and shift background left-to-right */
     .spy-menu li a:target-current ~ .ascii-bar {
-      background-position: 0% 0; /* Slides the green gradient color into focus */
-      filter: drop-shadow(0 0 4px rgba(10, 132, 255, 0.45)); /* CRT glow effect */
+      background-position: 0% 0;
+      filter: drop-shadow(0 0 4px rgba(10, 132, 255, 0.45));
     }
 
-    /* 7. Main Page Layout */
     .main-container {
       margin-left: 48px;
       box-sizing: border-box;
     }
 
-    /* 8. Full Height Section Styling */
     .full-height-section {
       height: 100vh;
       display: flex;
@@ -267,11 +243,7 @@
       color: #ccf;
       border-top: 1px solid rgba(0, 0, 0, 0.1);
     }
-    /* ==========================================================================
-      DOSSIER & SOCIAL ICON MATRIX (Pinned to Bottom)
-      ========================================================================== */
 
-    /* Parent layout block pinned to bottom of screen view */
     .sidebar-dossier {
       position: absolute;
       bottom: 0;
@@ -279,20 +251,18 @@
       width: 100%;
       padding: 15px 6px;
       box-sizing: border-box;
-      
       display: flex;
       align-items: flex-start;
-      gap: 12px; /* Matches your master grid spacing metrics perfectly */
+      gap: 12px;
       border-top: 1px solid #2a2a2e;
       background-color: #1c1c1e;
     }
 
-    /* Column 1: Social icon formatting track */
     .dossier-icons {
       display: flex;
       flex-direction: column;
-      gap: 8px; /* Vertical padding gap between each icon box */
-      width: 48px; /* Locks right along the 27px layout line */
+      gap: 8px;
+      width: 48px;
       flex-shrink: 0;
     }
     .sidebar-social-directory {
@@ -312,13 +282,13 @@
       margin: 0;
       display: flex;
       flex-direction: column;
-      gap: 8px;                   /* Clean layout padding tracking gaps */
+      gap: 8px;
     }
 
     .directory-list li {
       display: flex;
       align-items: center;
-      gap: 12px;                  /* Keeps vertical column boundaries aligned */
+      gap: 12px;
     }
     .social-icon {
       min-width: 36px;
@@ -336,21 +306,17 @@
       transition: all 0.3s ease;
     }
 
-    /* Hover style logic for icons */
     .social-icon:hover {
       color: #00ff66;
       border-color: #00ff66;
       box-shadow: 0 0 4px rgba(0, 255, 102, 0.4);
     }
 
-    /* Column 2: Dossier Profile Card Base Layout */
     .dossier-card {
       display: flex;
       flex-direction: column;
       font-family: monospace;
       white-space: nowrap;
-
-      /* Hiding Mechanics setup */
       opacity: 0;
       visibility: hidden;
       transform: translateX(-10px);
@@ -360,7 +326,7 @@
     .dossier-title {
       font-size: 0.85rem;
       font-weight: bold;
-      color: #0a84ff; /* Tech neon accent color blue */
+      color: #0a84ff;
       letter-spacing: 1px;
     }
 
@@ -371,7 +337,6 @@
       line-height: 1.4;
     }
 
-    /* Reveal the dossier card parameters only when sidebar opens */
     .sidebar-checkbox:checked ~ .persistent-sidebar .dossier-card {
       opacity: 1;
       visibility: visible;
@@ -383,15 +348,12 @@
       font-size: 0.75rem;
       color: #8e8e93;
       white-space: nowrap;
-      
-      /* Hiding Mechanics */
       opacity: 0;
       visibility: hidden;
       transform: translateX(-10px);
       transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
     }
 
-    /* Reveal directory address URLs when panel rolls open */
     .sidebar-checkbox:checked ~ .persistent-sidebar .directory-address {
       opacity: 1;
       visibility: visible;
@@ -399,22 +361,14 @@
       transition-delay: 0.12s;
     }
 
-    /* Padding safety offset adjustment so navigation list doesn't overlap footer content */
-    .spy-menu {
-      margin-bottom: 180px; 
-    }
-
   </style>
 </head>
 <body>
 
-  <!-- Hidden state controller -->
   <input type="checkbox" id="sidebar-toggle" class="sidebar-checkbox">
 
-  <!-- Transparent backdrop dark overlay -->
   <label for="sidebar-toggle" class="sidebar-overlay"></label>
 
-  <!-- Sidebar Component -->
   <aside class="persistent-sidebar">
     <div class="sidebar-header">
       <label for="sidebar-toggle" class="toggle-btn open-btn">&gt;</label>
@@ -432,7 +386,6 @@
           <p> tagline goes here ...</p>
         </div>
       </div>
-      <!-- The scroll-target-group container -->
       <ul class="spy-menu">
         <li><a href="#section-1">BIO</a><span class="extra-info ascii-bar">██████ ██████ ██████ ██████</span></li>
         <li><a href="#section-2">EXP</a><span class="extra-info ascii-bar">██████ ██████ ██████ ██████</span></li>
@@ -466,7 +419,6 @@
   </footer>
   </aside>
 
-  <!-- Scroll Container Elements -->
   <main class="main-container">
 
     <section id="section-1" class="full-height-section">
