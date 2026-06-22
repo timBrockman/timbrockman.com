@@ -14,6 +14,33 @@ module.exports = function(eleventyConfig) {
     validation: false 
   });
 
+  // ===
+  // Collection Helper
+  // ===
+
+  //group by year (must have items must have dates)
+   const groupByYear = (collection) => {
+    // Sort descending (Newest first)
+    const sorted = [...collection].sort((a, b) => b.date - a.date);
+    
+    // Group items by year
+    const grouped = sorted.reduce((acc, item) => {
+      const year = item.date.getFullYear();
+      if (!acc[year]) acc[year] = [];
+      acc[year].push(item);
+      return acc;
+    }, {});
+
+    // Group into an array of objects: [{ year: 2026, items: [...] }]
+    return Object.keys(grouped)
+      .sort((a, b) => b - a)
+      .map(year => ({
+        year: year,
+        items: grouped[year]
+      }));
+  };
+
+
   // ============================================
   // Collections
   // ============================================
@@ -28,6 +55,17 @@ module.exports = function(eleventyConfig) {
       .getFilteredByGlob("src/content/*.md");
     return collection.filter(item => item.data.tags && item.data.tags.includes("posts"));
   });
+
+    eleventyConfig.addCollection("postsByYear", (collectionApi)=>{
+      const collection = collectionApi
+          .getFilteredByGlob("src/content/*.md");
+      return groupByYear(collection.filter(item => item.data.tags && item.data.tags.includes("posts")));
+    });
+    eleventyConfig.addCollection("projectsByYear", (collectionApi)=>{
+      const collection = collectionApi
+          .getFilteredByGlob("src/content/*.md");
+      return groupByYear(collection.filter(item => item.data.tags && item.data.tags.includes("projects")));
+    });
 
   // ============================================
   // Passthrough Copies
