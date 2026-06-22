@@ -56,16 +56,16 @@ module.exports = function(eleventyConfig) {
     return collection.filter(item => item.data.tags && item.data.tags.includes("posts"));
   });
 
-    eleventyConfig.addCollection("postsByYear", (collectionApi)=>{
-      const collection = collectionApi
-          .getFilteredByGlob("src/content/*.md");
-      return groupByYear(collection.filter(item => item.data.tags && item.data.tags.includes("posts")));
-    });
-    eleventyConfig.addCollection("projectsByYear", (collectionApi)=>{
-      const collection = collectionApi
-          .getFilteredByGlob("src/content/*.md");
-      return groupByYear(collection.filter(item => item.data.tags && item.data.tags.includes("projects")));
-    });
+  eleventyConfig.addCollection("postsByYear", (collectionApi)=>{
+    const collection = collectionApi
+        .getFilteredByGlob("src/content/*.md");
+    return groupByYear(collection.filter(item => item.data.tags && item.data.tags.includes("posts")));
+  });
+  eleventyConfig.addCollection("projectsByYear", (collectionApi)=>{
+    const collection = collectionApi
+        .getFilteredByGlob("src/content/*.md");
+    return groupByYear(collection.filter(item => item.data.tags && item.data.tags.includes("projects")));
+  });
 
   // ============================================
   // Passthrough Copies
