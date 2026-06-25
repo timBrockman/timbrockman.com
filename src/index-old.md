@@ -14,43 +14,6 @@ footerText: "Developer Resume (pdf)"
 ---
 
 
-<section id="bio" class="full-height-section">
-      <header class="section-header">Header 1</header>
-      <div class="section-body">
-        <h1>Welcome to Section One</h1>
-        <p>Scroll down the page or tap the menu links. Notice how the menu link highlights automatically as the corresponding section passes through your screen view.</p>
-      </div>
-      <footer class="section-footer">Footer 1</footer>
-    </section>
-
-<section id="experience" class="full-height-section">
-  <header class="section-header">Header 2</header>
-  <div class="section-body">
-    <h1>Section Two Content</h1>
-    <p>No JavaScript event listeners or Intersection Observers are running. The browser engine handles all viewport tracking natively via <code>scroll-target-group</code>.</p>
-  </div>
-  <footer class="section-footer">Footer 2</footer>
-</section>
-
-<section id="projects" class="full-height-section">
-  <header class="section-header">Header 3</header>
-  <div class="section-body">
-    <h1>Section Three Content</h1>
-    <p>The link items dynamically change colors, indent slightly, and transition a blue dot indicator with a bouncy scaling ease effect.</p>
-  </div>
-  <footer class="section-footer">Footer 3</footer>
-</section>
-
-<section id="documents" class="full-height-section">
-  <header class="section-header">Header 4</header>
-  <div class="section-body">
-    <h1>Section Four Content</h1>
-    <p>You have reached the end of the scroll container tracking layout.</p>
-  </div>
-  <footer class="section-footer">Footer 4</footer>
-</section>
-
-
 
 I help government organizations adopt practical AI capabilities without sacrificing the security, compliance, and operational rigor their missions require.
 
