@@ -33,7 +33,7 @@ footerText: "Developer Resume (pdf)"
 <section id="experience" class="full-height-section">
   <header class="section-header">Header 2</header>
   <div class="section-body">
-    <h1>Section Two Content</h1>
+    <h1>Recent Experience</h1>
     <ul>
       <li>
 
@@ -41,9 +41,9 @@ footerText: "Developer Resume (pdf)"
 *February 2024 – Present*
 
 - Developed and deployed a custom Python application leveraging Generative AI (Claude on AWS Bedrock) to automatically convert large volumes of client documentation into competency models (TalentForge).  
-- Developed the initial release and implementation of a high-visibility ServiceNow HRSD platform for the Navy.  
+- Trusted with a high-visibility initial release of ServiceNow HRSD for the Navy.  
 - Performed a complete rewrite of a career pathing tool to align with new business requirements for the Centers for Disease Control (CDC), playing a pivotal role in securing an exceptional contract performance rating.  
-- Conducted technical discovery, built preliminary wireframes, and documented technical specifications for client-required system customizations for Army.  
+- Conducted technical discovery and documented technical specifications for client-required system customizations for the Army.
 - Completed preliminary development work for Air Force demonstration environments quickly and significantly under budget.
 
 </li>
