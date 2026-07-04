@@ -34,7 +34,63 @@ footerText: "Developer Resume (pdf)"
   <header class="section-header">Header 2</header>
   <div class="section-body">
     <h1>Section Two Content</h1>
-    <p>No JavaScript event listeners or Intersection Observers are running. The browser engine handles all viewport tracking natively via <code>scroll-target-group</code>.</p>
+    <ul>
+      <li>
+
+**Full Stack Developer | Deloitte**  
+*February 2024 – Present*
+
+- Developed and deployed a custom Python application leveraging Generative AI (Claude on AWS Bedrock) to automatically convert large volumes of client documentation into competency models (TalentForge).  
+- Developed the initial release and implementation of a high-visibility ServiceNow HRSD platform for the Navy.  
+- Performed a complete rewrite of a career pathing tool to align with new business requirements for the Centers for Disease Control (CDC), playing a pivotal role in securing an exceptional contract performance rating.  
+- Conducted technical discovery, built preliminary wireframes, and documented technical specifications for client-required system customizations for Army.  
+- Completed preliminary development work for Air Force demonstration environments quickly and significantly under budget.
+
+</li>
+<li>
+
+**Full Stack Web Developer | Katmai Government Services | Orlando, FL**  
+*May 2017 – February 2024*
+
+- Managed the full software development lifecycle for business-critical line-of-business applications while progressively owning broader responsibilities as de facto cloud architect, database administrator, DevSecOps engineer, and site reliability contributor.  
+- Built, deployed, and administered a production Kubernetes cluster on bare-metal VMware/vSphere infrastructure for over six years, along with a GitLab Enterprise instance.  
+- Developed and supported React front-ends served from Nginx in Docker containers and GraphQL/RESTful APIs on Node.js in Docker.  
+- Administered production MySQL, Microsoft SQL Server, and PostgreSQL databases.  
+- Led containerization of applications and migration of critical workloads into secure Azure Government Cloud High (GCC High) environments, including authentication migration from on-prem LDAP to Entra ID and implementation of GitHub Enterprise.  
+- Authored Katmai’s Secure System Engineering Principles to meet ISO 27001 requirements and performed STRIDE threat modeling for legacy projects.  
+- Supported ongoing compliance alignment with FedRAMP, NIST 800-171, and CMMC frameworks while contributing to open-source projects including the AMP Project and Kubernetes.io, with emphasis on security, Section 508 accessibility, and long-term maintainability.
+
+</li><li>
+
+**IT Manager | Republic First Management / Republic Equity | Winter Park, FL**  
+*January 2013 – May 2017*
+
+- Directed IT strategy, acquisition, deployment, and support across 13 businesses operating in 4 states to meet diverse operational objectives.  
+- Proposed, authored, implemented, and audited information systems and technology policies that reduced average per-company IT spend by 16%, improved productivity, and strengthened data protection.
+
+</li><li>
+
+**Education**
+
+- Master of Science, Data Science (in progress, 4.0 GPA maintained) — University of Colorado Boulder  
+- Master of Science, Artificial Intelligence (in progress) — Woolf University via Udacity  
+- Bachelor of Fine Arts, Graphic Design — University of Central Florida
+
+</li><li>
+
+**Certifications**
+
+- ServiceNow Certified System Administrator (CSA)  
+- ServiceNow Certified Application Developer (CAD)  
+- ServiceNow Professional HRSD Implementation Specialist  
+- Certified Ethical Hacker (CEH)  
+- EC-Council Certified Security Analyst (ECSA)  
+- Computer Hacking Forensic Investigator (CHFI)  
+- Anthropic Claude on Bedrock Certification  
+- Microsoft Azure Fundamentals (AZ-900)
+
+      </li>
+    </ul>
   </div>
 <div class="sub-block">
   <div class="image-notch"></div>
