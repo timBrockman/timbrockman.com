@@ -2,26 +2,27 @@
 
 :root {
   /* Colors */
-  --bg-main: #000;
-  --bg-panel: #1c1c1e;
-  --bg-sidebar-dim: rgba(0, 0, 0, 0.1);
-  --bg-overlay: rgba(0, 0, 0, 0.4);
-  --bg-section-accent: rgba(0, 0, 0, 0.05);
-  --bg-icon: #111;
-  
-  --text-main: #7df;
-  --text-sidebar: #eaeaea;
-  --text-muted: #8e8e93;
-  --text-link: #aac;
   
   --accent-blue: #0a84ff;
-  --accent-blue-dim: rgba(10, 132, 255, 0.08);
+  --accent-blue-dim: rgba(10, 132, 255, 0.1);
   --accent-blue-glow: rgba(10, 132, 255, 0.45);
   --accent-green: #00ff66;
   --accent-green-glow: rgba(0, 255, 102, 0.4);
-  
+
+  --text-main: #4ae;
+  --text-sidebar: #eaeaea;
+  --text-muted: #38c;
+  --text-link: #7df;
+
+  --bg-main: #000;
+  --bg-panel: linear-gradient(to right, #0c0c0c 0%, #0c0c0c 300px, #000 100%);
+  --bg-sidebar-dim: rgba(0, 0, 0, 0.7);
+  --bg-scan-lines: repeating-linear-gradient(0deg, rgba(10, 255, 102, 0.1), var(--accent-blue-dim) 4px, transparent 1px, transparent 3px);
+  --bg-overlay: var(--bg-scan-lines);
+  --bg-section-accent: rgba(0, 0, 0, 0.05);
+  --bg-icon: #111;  
   --border-dark: #2a2a2e;
-  --border-light: #ddd;
+  --border-light: var(--accent-blue);
   --border-transparent: rgba(0, 0, 0, 0.1);
   
   /* Typography */
@@ -35,6 +36,10 @@
   --transition-base: 0.4s;
   --ease-bouncy: cubic-bezier(0.25, 1, 0.5, 1);
   --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --notch-size: 96px;
+  --sub-block-height: calc(var(--notch-size)*2);
+  --flicker-speed: 1.5s; /* Slightly faster glitch loop */
+
 }
 
 html {
@@ -104,7 +109,7 @@ nav, header, footer, h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: var(--bg-overlay);
+  background: var(--bg-overlay);
   z-index: 999;
   opacity: 0;
   pointer-events: none;
@@ -169,7 +174,7 @@ nav, header, footer, h1, h2, h3, h4, h5, h6 {
   width: 36px;
   flex-shrink: 0;
   position: relative;
-  color: var(--text-link);
+  color: var(--text-muted);
   text-decoration: none;
   display: block;
   padding: 8px 5px;
@@ -232,7 +237,7 @@ nav, header, footer, h1, h2, h3, h4, h5, h6 {
 }
 
 .full-height-section {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -276,8 +281,8 @@ nav, header, footer, h1, h2, h3, h4, h5, h6 {
   width: 100%;
   padding: 15px 6px;
   box-sizing: border-box;
-  border-top: 1px solid var(--border-dark);
-  background-color: var(--bg-panel);
+  /* border-top: 1px solid var(--border-dark); */
+  background: var(--bg-panel);
 }
 
 .directory-list {
@@ -353,6 +358,17 @@ nav, header, footer, h1, h2, h3, h4, h5, h6 {
     flex-direction: row;
   }
 
+  .columned{
+    columns: 2;
+    column-gap:3rem;
+  }
+  .columned p:first-child{
+    margin-top: 0px;
+  }
+  .section-body h1{
+    text-align:center;
+  }
+
   /* Nullify overlay on desktop */
   .sidebar-overlay {
     display: none;
@@ -399,4 +415,12 @@ nav, header, footer, h1, h2, h3, h4, h5, h6 {
   }
 }
 
-    </style>
+@media (hover: hover) and (pointer: fine) {
+  
+  .spy-menu li a:hover {
+    color: var(--accent-green);
+    border-color: var(--accent-green);
+    box-shadow: 0 0 4px var(--accent-green-glow);
+  }
+}
+</style>
