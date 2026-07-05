@@ -96,7 +96,7 @@ We use a **hybrid human + AI-assisted** workflow:
    - Primary source of truth: `timbrockman_com_content_hub` Google Sheet
    - Major sections drafted in a "Site Content Brief" Google Doc
 2. **Implementation** (inside GitHub)
-   - Use GitHub Codespaces + GitHub Copilot for layouts, components, and CSS
+   - Use GitHub Codespaces + GitHub Copilot for minor layouts, components, and CSS
    - Quick Markdown updates via GitHub Mobile app
 3. **Diagrams**
    - Prefer build-time rendered SVG (via Mermaid CLI) wrapped with the existing `ampimg` shortcode
@@ -110,8 +110,8 @@ See [plan.md](https://github.com/timBrockman/timbrockman.com/blob/master/plan.md
 **Primary Goal (2026):** Complete the refactor so the site clearly communicates:
 
 - Current role at Deloitte building practical Generative AI systems
-- Deep expertise in secure platforms, ServiceNow, and large-scale infrastructure
-- Systems thinking that informs current AI work (Kubernetes history posts reframed as foundational expertise)
+- Deep expertise in secure platforms and large-scale infrastructure
+- Systems thinking that informs current AI work (Kubernetes posts reframed as foundational expertise)
 
 **Phased Approach** (see plan.md for details):
 - **Phase 0**: Content strategy & narrative (Hero, About, TalentForge project)
@@ -132,7 +132,7 @@ See [plan.md](https://github.com/timBrockman/timbrockman.com/blob/master/plan.md
 This is a personal portfolio, but structured for maintainability:
 
 - Content changes: Prefer drafting in Google Docs/Sheets first, then port to Markdown
-- Code changes: Use Copilot in Codespaces for speed and consistency
+- Code changes: Codespaces for speed and consistency
 - Small fixes: GitHub Mobile is excellent for quick commits
 
 Pull requests and suggestions are welcome if you see opportunities to improve clarity or technical execution.

@@ -3,19 +3,14 @@
 {% include 'snippets/meta/amp-head.liquid' %}
 
 <body>
-  {% include 'snippets/sidebar/amp-sidebar.liquid' %}
-
-  <div class="site-wrapper">
-    {% include 'snippets/header/id-header.liquid' %}
-    {% include 'snippets/header/page-header.liquid' %}
-
+  {% include 'snippets/sidebar/html-sidebar.liquid' %}
+    
     <!-- Main Content -->
-    <main class="main-content triangle-clip">
-      {% include 'snippets/body/single-page.liquid' %}
+    <main class="main-container">
+      {{ content }}
     </main>
 
-    {% include 'snippets/footer/footer.liquid' %}
-  </div>
+    {% # include 'snippets/footer/footer.liquid' %}
 
   {% include 'snippets/body/analytics.liquid' %}
 </body>

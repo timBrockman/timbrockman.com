@@ -6,6 +6,6 @@
     "ghcr.io/devcontainers/features/git-lfs:1": {}
   },
   "postCreateCommand": "yes | npm install -g agent-browser && yes | agent-browser install --with-deps",
-  "forwardPorts": [8080, 3000],
+ "forwardPorts": [8080, 3000],
   "remoteUser": "node"
 }
