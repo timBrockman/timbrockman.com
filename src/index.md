@@ -15,12 +15,12 @@ footerText: "Developer Resume (pdf)"
 
 
 <section id="bio" class="full-height-section">
-      <header class="section-header">Bio</header>
+      <header class="section-header">#BIO</header>
       <div class="section-body">
         <h1>Professional Summary</h1>
         <div class="columned">
           <p>
-          I build the kinds of systems governments actually need —reliable enough to run in production, transparent enough to audit, and maintainable enough that a team can own them for years . To best serve Government clients I maintain an active security clearance.
+          I build the kinds of systems governments actually need —reliable enough to run in production, transparent enough to audit, and maintainable enough that a team can own them for years. To best serve Government clients I maintain an active security clearance.
           </p><p>
           With experience ranging from deep bare metal infrastructure, to front end optimization —running production Kubernetes clusters on bare metal to strategic react caching strategies —I was in a unique position to bring the same engineering discipline (observability, auditability, and long-term maintainability) to Generative AI and proprietary platforms at Deloitte.
           </p><p>
@@ -28,11 +28,11 @@ footerText: "Developer Resume (pdf)"
           </p>
         </div>
       </div>
-      <footer class="section-footer">end Bio</footer>
+      <footer class="section-footer">end BIO <a href="#bio">TOP</a></footer>
     </section>
 
 <section id="experience" class="full-height-section">
-  <header class="section-header">Exp</header>
+  <header class="section-header">#EXP</header>
   <div class="section-body">
     <h1>Recent Experience</h1>
     <ul class="section-list">
@@ -95,11 +95,11 @@ footerText: "Developer Resume (pdf)"
     </ul>
   </div>
 </div>
-<footer class="section-footer">end Exp</footer>
+<footer class="section-footer">end EXP <a href="#experience">EXP</a> <a href="#bio">TOP</a></footer>
 </section>
 
 <section id="projects" class="full-height-section">
-  <header class="section-header">Dev</header>
+  <header class="section-header">#DEV</header>
   <div class="section-body">
     <h1>Projects</h1>
 <ul class="section-list">
@@ -146,15 +146,20 @@ As an early member of the Accelerated Mobile Pages (AMP) Project, I helped compo
 </li>
 </ul>
   </div>
-  <footer class="section-footer">end Dev</footer>
+  <footer class="section-footer">end DEV<a href="#projects">DEV</a> <a href="#bio">TOP</a></footer>
 </section>
 
 <section id="documents" class="full-height-section">
-  <header class="section-header">Doc</header>
+  <header class="section-header">#DOX</header>
   <div class="section-body">
     <h1>Documents</h1>
-    <p></p>
+    <div style="text-align: center;">
+
+    *****[&#10515; Download Resume](/dl/dev-res.pdf)*****
+    
+    
   </div>
-  <footer class="section-footer">end Doc</footer>
+  </div>
+  <footer class="section-footer">end DOX <a href="#documents">DOX</a> <a href="#bio">TOP</a></footer>
 </section>
 
