@@ -42,8 +42,8 @@ footerText: "Developer Resume (pdf)"
 *February 2024 – Present*
 
 - Developed and deployed a custom Python application leveraging Generative AI (Claude on AWS Bedrock) to automatically convert large volumes of client documentation into competency models (TalentForge).  
-- Trusted to impliment a high-visibility initial release of ServiceNow HRSD.  
-- Performed a complete rewrite of the Talent Trace career pathing tool to align with new business requirements, playing a pivotal role in securing an exceptional contract performance rating.  
+- Trusted to implement a high-visibility initial release of ServiceNow HRSD.  
+- Performed a complete rewrite of the TalentTrace career pathing tool to align with new business requirements, playing a pivotal role in securing an exceptional contract performance rating.  
 - Conducted technical discovery and documented technical specifications for client-required system customizations.
 - Completed preliminary development work for business development demonstration environments quickly and significantly under budget.
 - Worked hand and hand with major Department of War, Federal Heathcare, and State clients 
